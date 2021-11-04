@@ -4,31 +4,38 @@
 header{
     margin:0;
     background-color:none;
-    position: fixed;z-index: 9999;left: 0; top:1%;width: 100%;height: 7%;
+    position: fixed;z-index: 9999;left: 0; top:3%;width: 100%;height: 7%;
     display: flex; flex-direction: row; 
     align-items: center; 
 }
 header .logo{
-    height: 100%; margin-left:2%;
+    height: 100%; margin-left:3%; 
 }
 header .logo > a {
-    height: 100%; display:flex;align-items: center;  justify-content:center; 
+    height: 100%;  display:flex; align-items: center;  justify-content:center; 
 }
 header .logo > a > img {
-    width: 50px;
+    width: 80px;
 }
 header .jw-nav{
     width: 30%; height: 100%; 
 }
 header .jw-nav ul{
     width: 30%; padding:0;position: absolute; top: 25%;  transform: translateY(-25%);
-    display: flex; flex-direction: row; margin-right:0; align-items: center;  justify-content:center; 
+    display: flex; flex-direction: row; left: 10%; align-items: center;  
 }
 header .jw-nav ul li{
-    list-style: none;  margin-left: 7%; margin-right: 7%;  cursor: pointer;
+    list-style: none;   cursor: pointer;
+}
+header .jw-nav ul li:nth-of-type(2){
+    margin-left: 10%; margin-right: 10%;
 }
 header .jw-nav ul li > a{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
-    font-weight: 700;font-size: 1rem; color:#ffffff;
+    font-weight: 500;font-size: 1rem; color:#ffffff; letter-spacing: 2px;
     text-decoration: none; text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+header .jw-nav ul li > a:hover{
+    color:red; transition: 0.3s ease-in-out;
 }
