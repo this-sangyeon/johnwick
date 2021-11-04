@@ -28,8 +28,11 @@ section:nth-of-type(2) {
 /* trailer-area */
 /* trailer-btn */
 .main-container .bg-section .trailer-btn{
-    width: 10%; height: 10%; position: absolute; right:2%; cursor: pointer;
+    width: 10%; height: 10%; position: absolute; right:2%; cursor: pointer; visibility: visible;transition: ease-in-out 0.3s;opacity: 1;
     z-index: 100;  top:50%; transform: translateY(-50%); display: flex; flex-direction: row; justify-content: center; align-items: center;
+}
+.main-container .bg-section .trailer-btn.active{
+   visibility: hidden; transition: ease-in-out 0.3s; opacity: 0;
 }
 .main-container .bg-section .trailer-btn .trailer-name{
     width: 100%; text-align: center; transform: rotate(-90deg);
@@ -69,21 +72,24 @@ section:nth-of-type(2) {
 }
 /* trailer-box */
 .main-container .bg-section .trailer-area{
-    position: absolute; right:0;
-    width: 30%; height: 100%; background-color: cadetblue;
-    z-index: 1000;
+    position: fixed; right:-30%; visibility: hidden;
+    width: 30%; height: 100%; background-color: rgba(0, 0, 0, 0.535);
+    z-index: 1000; transition: ease-in-out 0.5s; 
+}
+.main-container .bg-section .trailer-area.active{
+    right:0%;transition: ease-in-out 0.5s;visibility: visible; 
 }
 .main-container .bg-section .trailer-area .trailer-close {
     width: 100%; height: 100%; display: flex; align-items: center;
 }
 .main-container .bg-section .trailer-area .trailer-close .close-btn{
-    width: 60px; height: 60px; background-color: chocolate;
-    border-radius: 50%; margin-left:-5%; position: relative;
-    display: flex;justify-content: center;
+    width: 50px; height: 50px; background-color: rgba(119, 115, 115, 0.508);
+    border-radius: 50%; position:absolute; left:-5%; top:50%; transform: translateY(-50%);
+    display: flex;justify-content: center; z-index: 9999;
 }
 .main-container .bg-section .trailer-area .trailer-close .close-btn div{
-   border-bottom:solid 1px white;
-   width: 40px; position: absolute; top:50%;  transform: translateY(-50%);
+   border-bottom:solid 2px rgb(255, 0, 0);
+   width: 30px; position: absolute; top:50%;  transform: translateY(-50%);
 }
 .main-container .bg-section .trailer-area .trailer-close .close-btn div:first-of-type{
    transform: rotate(-45deg);
@@ -91,20 +97,48 @@ section:nth-of-type(2) {
 .main-container .bg-section .trailer-area .trailer-close .close-btn div:last-of-type{
     transform: rotate(45deg);
 }
-.main-container .bg-section .trailer-area .trailer-close .trailer-box{
-    width: 90%; height: 90%; background-color: burlywood;
+.main-container .bg-section .trailer-area .trailer-box{
+    width: 90%; height: 100%; 
+    position: relative; display: flex; flex-direction: column;
 }
 
-.main-container .bg-section .trailer-area .trailer-close .trailer-box {
-    width: 90%; height: 90%; background-color: burlywood;
+.main-container .bg-section .trailer-area .trailer-box h3{
+    font-family: 'Montserrat', sans-serif; cursor: pointer;
+    font-weight: 500;font-size: 2.5rem; color:#ffffff; padding-top:5%; padding-left: 5%;
+    text-decoration: none; text-transform: uppercase;margin: 0; 
+}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter{
+   width: 100%; height: 90%; position: absolute; top:7%;
+   display: flex;flex-direction: column; align-items: center; justify-content: center; 
+}
+
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul{
+    width: 100%; 
+    padding: 0;box-sizing: border-box; 
+}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li{
+    list-style: none; display: flex;flex-direction: column; justify-content: center;align-items: center;   
+}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li:nth-of-type(2){
+    margin-top:10%; margin-bottom:10%;
+}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a {
+    text-decoration: none; 
+}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a > h4{
+    font-family: 'Montserrat', sans-serif; cursor: pointer;
+    font-weight: 500;font-size: 1rem; color:#ffffff; margin-bottom:0;
+    text-decoration: none; text-transform: uppercase;margin-top: 3%;
+}
+
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area img{
+   width: 300px;
 }
 
 .main-container .box-shadow{
     width: 50%;height: 100%; 
     background:linear-gradient(to right, rgba(0, 0, 0, 0.645) 70%, rgba(0, 0, 0, 0));
     position: absolute; z-index: 1;
-    /* x-position y-position blur spread color */
-    /* box-shadow: 0px 0 100px 0px rgb(124, 121, 121); */
 }
 .main-container  .bg-section .bg-img{
     width: 100%; height: 100%; position: absolute; transform: scaleX(-1);
@@ -190,7 +224,7 @@ footer .footer-area{
     width: 50%; height: 100%; position: absolute; left:5%;
 }
  footer .footer-area ul{
-   width: 100%;height: 100%;
+   width: 100%;
 }
 footer .footer-area ul li{
     float:left;
