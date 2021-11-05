@@ -44,9 +44,13 @@ section:nth-of-type(2){
    object-fit: cover;
 }
 .character-container .box{
-    position: absolute; width: 55%;height: 100%; left: 0; 
+    position: absolute; width: 55%;height: 100%; left: -5%; 
     background-color: #4F0BC1; z-index: 200;
     clip-path: polygon(0 0, 95% 0%, 75% 100%, 0% 100%);
+    transition: 0.3s ease-in-out;
+}
+.character-container .box.active{
+    left: 0%; transition: 0.3s ease-in-out;
 }
 .character-container .character-content{
     width: 60%; height: 100%; z-index: 300; position: relative; left:9%;
