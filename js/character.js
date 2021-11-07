@@ -1,6 +1,12 @@
 let jwNavLink = document.querySelectorAll('.jw-nav ul > li > a');
-jwNavLink =Array.prototype.slice.call(jwNavLink);
+jwNavLink = Array.prototype.slice.call(jwNavLink);
 const clipBox = document.querySelector('.box');
+let bgImages = document.querySelectorAll('.bg-imgs');
+
+let section = document.querySelectorAll('section');
+const bgSection = document.querySelector('.character-container > .bg-section');
+const navWrap = document.querySelector('.nav-wrap');
+
 
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',()=>{
@@ -13,11 +19,29 @@ for(let i =0; i< jwNavLink.length; i++){
 }
 
 jwNavLink[1].addEventListener('click',()=>{
-    clipBox.classList.add('active');
+    section[1].classList.add('active');
+    setTimeout(()=>{
+        clipBox.classList.add('active');
+        bgSection.classList.add('active');
+        navWrap.classList.add('active');
+    },700)
+    
+   
+    
 })
 jwNavLink[0].addEventListener('click',()=>{
-    clipBox.classList.remove('active');
+    setTimeout(()=>{
+        clipBox.classList.remove('active');
+        bgSection.classList.remove('active');
+        navWrap.classList.remove('active');
+    },700)
+    
+ 
+    
+
 })
 jwNavLink[2].addEventListener('click',()=>{
     clipBox.classList.remove('active');
+    bgSection.classList.remove('active');
+    section[1].classList.remove('active');
 })

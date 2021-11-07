@@ -1,12 +1,20 @@
 section:nth-of-type(2){
    z-index: 500;width: 100%; height: 100%;
+    visibility: hidden;
 }
+section:nth-of-type(2).active{
+    visibility: visible;
+ }
 .character-container{
     width: 100%; height: 100%;position: relative;
-    background-color: blue;
 }
+
 .character-container .nav-wrap{
-    width: 15%; height: 100%;position: absolute; right:0;
+    width: 15%; height: 100%;position: absolute; right:-15%;
+    z-index: 1000;
+}
+.character-container .nav-wrap.active{
+    width: 15%; height: 100%;position: absolute; right:0%;
     z-index: 1000;
 }
 
@@ -30,7 +38,11 @@ section:nth-of-type(2){
     width: 50%; position: relative; left: 50%; transform: translateX(-50%);
 }
 .character-container .bg-section{
-    position: absolute; width: 60%;height: 100%; right:0; 
+    position: absolute; width: 60%;height: 100%; right:-5%;
+    transition: 0.3s ease-in-out; opacity: 0;
+}
+.character-container .bg-section.active{
+   transition: 0.3s ease-in-out;opacity: 1;right:0%;
 }
 .character-container .bg-section  .bg-imgs{
     position: relative; width: 100%; height: 100%;
@@ -45,7 +57,7 @@ section:nth-of-type(2){
 }
 .character-container .box{
     position: absolute; width: 55%;height: 100%; left: -5%; 
-    background-color: #4F0BC1; z-index: 200;
+    background-color: #4F0BC1; z-index: 100;
     clip-path: polygon(0 0, 95% 0%, 75% 100%, 0% 100%);
     transition: 0.3s ease-in-out;opacity: 0;
 }
@@ -75,7 +87,7 @@ section:nth-of-type(2){
     display: flex;flex-direction: column; padding: 2%;
 }
 .character-container .character-content .character-intro .character-box .character-text{
-    width: 100%; 
+    width: 100%; height: 40%;
     font-family: 'Montserrat', sans-serif; color:#ffffff; margin: 5% 0;
 }
 .character-container .character-content .character-intro .character-box .character-text h1{
@@ -88,7 +100,7 @@ section:nth-of-type(2){
 }
 .character-container .character-content .character-intro .character-box .character-text p:last-of-type{
     font-weight: 100;font-size: 1rem; color:#ffffff; 
-    margin: 0; line-height: 1.5rem; width: 70%;
+    margin: 0; line-height: 1.5rem; width: 70%; 
 }
 .character-container .character-content .character-intro .character-box .still-cut{
     width: 100%;  margin-top: 5%;
