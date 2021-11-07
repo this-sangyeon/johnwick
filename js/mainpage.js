@@ -10,6 +10,14 @@ let currentIndex = 0;
 const loadLinkEl= document.querySelector('.isMovieLink');
 let getLink = loadLinkEl.getAttribute('href');
 let movielink = ['https://page.kakao.com/home?seriesId=50653596','https://page.kakao.com/home?seriesId=50653662','https://page.kakao.com/home?seriesId=53491878'];
+const trailerLinkEls = document.querySelectorAll('.chapter-area ul li a');
+let trailerLink =[
+    {
+        link:['https://tv.naver.com/v/275348','https://tv.naver.com/v/275348','https://tv.naver.com/v/275348'],
+        img:['img/main/jw1.jpeg','img/main/jw1.jpeg','img/main/jw1.jpeg'],
+        text: ['jw 메인jw 메인','jw 메인jw 메인','jw 메인jw 메인']
+     }
+]
 // 트레일러
 const trailerBtn = document.querySelector('.trailer-btn');
 const trailerArea = document.querySelector('.trailer-area');
@@ -75,19 +83,13 @@ chapterPrevBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
-    for(let i = 0; i < chapterArea.length; i++){
-        chapterArea[i].classList.remove('active');
-    }
-    for(let i = 0; i < movielink.length; i++){
-        loadLinkEl.setAttribute('href', movielink[i]);
-    }
+    // for(let i = 0; i < chapterArea.length; i++){
+    //     chapterArea[i].classList.remove('active');
+    // }
     mainIntroArea[currentIndex].classList.add('active');
-    chapterArea[currentIndex].classList.add('active');
+    // chapterArea[currentIndex].classList.add('active');
+    loadLinkEl.setAttribute('href', movielink[currentIndex]);
 })
-
-
-
-
 chapterNextBtn.addEventListener('click',()=>{
     currentIndex = currentIndex + 1;
     currentIndex > introLength - 1 && (currentIndex = 0);
@@ -96,13 +98,12 @@ chapterNextBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
-    for(let i = 0; i < chapterArea.length; i++){
-        chapterArea[i].classList.remove('active');
-    }
-    for(let i = 0; i < movielink.length; i++){
-        loadLinkEl.setAttribute('href', movielink[i]);
-    }
+    // for(let i = 0; i < chapterArea.length; i++){
+    //     chapterArea[i].classList.remove('active');
+    // }
+
     mainIntroArea[currentIndex].classList.add('active');
-    chapterArea[currentIndex].classList.add('active');
+    // chapterArea[currentIndex].classList.add('active');
+    loadLinkEl.setAttribute('href', movielink[currentIndex]);
 })
 
