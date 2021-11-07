@@ -56,9 +56,16 @@ section:nth-of-type(2){
     width: 60%; height: 100%; z-index: 300; position: relative; left:9%;
 }
 .character-container .character-content .back-arrow{
-   width: 10%; height: 10%; background-color: darksalmon; position: absolute; top:10%;
-   left: 40%;z-index: 500;
+   width: 6%; height: 6%;  position: absolute; top:13%;
+   left: 3%;z-index: 500; display: flex; align-items: center; cursor: pointer;
 } 
+.character-container .character-content .back-arrow span:first-of-type{
+    width: 10px;height: 10px; ; position: absolute;
+    border-left:solid 2px white;border-bottom:solid 2px white; transform: rotate(45deg);
+}
+.character-container .character-content .back-arrow span:last-of-type{
+    width: 100%; position: absolute; height:2px; background-color: white;
+}
 .character-container .character-content .character-intro{
     width: 85%; height: 100%; position: absolute; 
     display: flex; justify-content: center;align-items: center;
