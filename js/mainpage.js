@@ -2,7 +2,7 @@ let jwNavLink = document.querySelectorAll('.jw-nav ul > li > a');
 let section = document.querySelectorAll('section');
 const chapterPrevBtn = document.querySelector('.chapter-arrow > .prev');
 const chapterNextBtn = document.querySelector('.chapter-arrow > .next')
-let bgImages = document.querySelectorAll('.main-container > .bg-section > .bg-imgs');
+let bgImages = document.querySelectorAll('.main-container > .bg-section > .bg-imgs > img');
 let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
 let introLength = mainIntroArea.length;
 let currentIndex = 0;
@@ -12,7 +12,7 @@ let currentIndex = 0;
 const trailerBtn = document.querySelector('.trailer-btn');
 const trailerArea = document.querySelector('.trailer-area');
 const closeBtn = document.querySelector('.close-btn');
-let chapterArea = document.querySelectorAll('.trailer-chapter > .chapter-area');
+let chapterArea = document.querySelectorAll('.trailer-chapter');
 // let chapterLength
 let infoBtn = document.querySelectorAll('.InfoBtn > button')
 
@@ -21,7 +21,6 @@ jwNavLink = Array.prototype.slice.call(jwNavLink);
 bgImages = Array.prototype.slice.call(bgImages);
 mainIntroArea = Array.prototype.slice.call(mainIntroArea);
 chapterArea = Array.prototype.slice.call(chapterArea);
-
 
 // 메인 네비게이션
 for(let i =0; i< jwNavLink.length; i++){
