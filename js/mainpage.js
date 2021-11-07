@@ -66,9 +66,9 @@ for(let i = 0; i <infoBtn.length; i++){
         infoBtn[i].style.transition = "0.3s ease-in"
     })
 }
-console.log(movielink);
-console.log(loadLinkEl);
-chapterPrevBtn.addEventListener('click',(e)=>{
+// console.log(movielink);
+// console.log(loadLinkEl);
+chapterPrevBtn.addEventListener('click',()=>{
     currentIndex = currentIndex - 1;
     currentIndex < 0 && (currentIndex = introLength - 1);
     console.log(currentIndex);
