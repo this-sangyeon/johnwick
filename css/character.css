@@ -1,21 +1,23 @@
 section:nth-of-type(2){
    z-index: 500;width: 100%; height: 100%;
-    visibility: hidden;
+    visibility: hidden; pointer-events: none;
 }
 section:nth-of-type(2).active{
-    visibility: visible;
+    visibility: visible;pointer-events:auto;
+    
  }
 .character-container{
     width: 100%; height: 100%;position: relative;
+    pointer-events: none;
 }
 
 .character-container .nav-wrap{
     width: 15%; height: 100%;position: absolute; right:-15%;
-    z-index: 1000;
+    z-index: 1000; pointer-events: none;
 }
 .character-container .nav-wrap.active{
     width: 15%; height: 100%;position: absolute; right:0%;
-    z-index: 1000;
+    z-index: 1000;pointer-events: auto;
 }
 
 .character-container .nav-wrap .character-nav {
@@ -38,11 +40,12 @@ section:nth-of-type(2).active{
     width: 50%; position: relative; left: 50%; transform: translateX(-50%);
 }
 .character-container .bg-section{
-    position: absolute; width: 60%;height: 100%; right:-5%;
-    transition: 0.3s ease-in-out; opacity: 0;
+    position: absolute; width: 60%;height: 100%; right:-5%;pointer-events: none;
+    transition: 0.3s ease-in-out; opacity: 0; visibility: hidden; 
 }
 .character-container .bg-section.active{
-   transition: 0.3s ease-in-out;opacity: 1;right:0%;
+   transition: 0.3s ease-in-out;opacity: 1;right:0%;visibility: visible;
+   pointer-events: auto;
 }
 .character-container .bg-section  .bg-imgs{
     position: relative; width: 100%; height: 100%;
