@@ -12,6 +12,7 @@ body{
 }
 section {
     width: 100%; height: 100%; position: absolute;
+    background: black;
 }
 
 /* main*/
@@ -167,10 +168,14 @@ section {
 }
 .main-container  .bg-section .bg-img{
     width: 100%; height: 100%; position: absolute; transform: scaleX(-1);
+    visibility: hidden; opacity: 0;transition: 0.3s ease-in-out;
+}
+.main-container  .bg-section .bg-img.active{
+    width: 100%; height: 100%; position: absolute; transform: scaleX(-1);
+    visibility: visible; opacity: 1;transition: 0.3s ease-in-out;
 }
 .main-container .bg-section .bg-img img{
-    width: 100%;height: 100%;
-    object-fit: cover;
+    width: 100%;height: 100%;object-fit: cover; 
 }
 .main-container .main-area{
     width: 50%; height: 100%; position: absolute; z-index: 3;

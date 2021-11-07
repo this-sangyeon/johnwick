@@ -2,7 +2,7 @@ let jwNavLink = document.querySelectorAll('.jw-nav ul > li > a');
 let section = document.querySelectorAll('section');
 const chapterPrevBtn = document.querySelector('.chapter-arrow > .prev');
 const chapterNextBtn = document.querySelector('.chapter-arrow > .next')
-let bgImages = document.querySelectorAll('.main-container > .bg-section > .bg-imgs > img');
+let bgImages = document.querySelectorAll('.main-container > .bg-section > .bg-img');
 let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
 let introLength = mainIntroArea.length;
 let currentIndex = 0;
@@ -102,7 +102,11 @@ chapterPrevBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
+    for(let i = 0; i < bgImages.length; i++){
+        bgImages[i].classList.remove('active');
+    }
     mainIntroArea[currentIndex].classList.add('active');
+    bgImages[currentIndex].classList.add('active');
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
     trailerInfo();
   
@@ -116,7 +120,11 @@ chapterNextBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
+    for(let i = 0; i < bgImages.length; i++){
+        bgImages[i].classList.remove('active');
+    }
     mainIntroArea[currentIndex].classList.add('active');
+    bgImages[currentIndex].classList.add('active');
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
     trailerInfo();
 })
