@@ -9,7 +9,13 @@ let currentIndex = 0;
 
 const loadLinkEl= document.querySelector('.isMovieLink');
 let getLink = loadLinkEl.getAttribute('href');
-let movielink = ['https://page.kakao.com/home?seriesId=50653596','https://page.kakao.com/home?seriesId=50653662','https://page.kakao.com/home?seriesId=53491878'];
+let movielink = [
+    'https://page.kakao.com/home?seriesId=50653596',
+    'https://page.kakao.com/home?seriesId=50653662',
+    'https://page.kakao.com/home?seriesId=53491878'
+];
+
+// 트레일러
 const trailerLinkEls = document.querySelectorAll('.chapter-area ul li a');
 const trailerLinkImg = document.querySelectorAll('.chapter-area ul li a > img');
 const trailerLinkText = document.querySelectorAll('.chapter-area ul li a > h4');
@@ -30,7 +36,7 @@ let trailerLink =[
         text: ['Main preview','15-second preview','30-second preview']
      }
 ]
-// 트레일러
+
 const trailerBtn = document.querySelector('.trailer-btn');
 const trailerArea = document.querySelector('.trailer-area');
 const closeBtn = document.querySelector('.close-btn');
@@ -119,6 +125,6 @@ function trailerInfo(){
     for(let i = 0; i < trailerLinkEls.length; i++){
         trailerLinkEls[i].setAttribute('href',trailerLink[currentIndex].link[i]);
         trailerLinkImg[i].setAttribute('src',trailerLink[currentIndex].img[i]);
-        trailerLinkText[i].innerHTML('href',trailerLink[currentIndex].text[i]);
+        trailerLinkText[i].innerText = trailerLink[currentIndex].text[i];
     }
 }

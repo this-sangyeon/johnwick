@@ -1,29 +1,33 @@
 const clipBox = document.querySelector('.box');
 const bgSection = document.querySelector('.character-container > .bg-section');
 const navWrap = document.querySelector('.nav-wrap');
+const characterContent = document.querySelector('.character-content');
+let characterIntro = document.querySelectorAll('.character-intro');
 
+// for(let i =0; i< jwNavLink.length; i++){
+//     jwNavLink[i].addEventListener('click',()=>{
+//         // e.defaultPrevented();
+//         for(let j = 0; j < jwNavLink.length; j++){
+//             jwNavLink[j].classList.remove('active');
+//         }
+//         jwNavLink[i].classList.add('active');
+//     })
+// }
 
-for(let i =0; i< jwNavLink.length; i++){
-    jwNavLink[i].addEventListener('click',()=>{
-        // e.defaultPrevented();
-        for(let j = 0; j < jwNavLink.length; j++){
-            jwNavLink[j].classList.remove('active');
-        }
-        jwNavLink[i].classList.add('active');
-    })
-}
-
-jwNavLink[1].addEventListener('click',()=>{
-    section[1].classList.add('active');
-    setTimeout(()=>{
-        clipBox.classList.add('active');
-        bgSection.classList.add('active');
-        navWrap.classList.add('active');
-    },700)
+// jwNavLink[1].addEventListener('click',()=>{
+//     section[1].classList.add('active');
+//     setTimeout(()=>{
+//         clipBox.classList.add('active');
+//         bgSection.classList.add('active');
+//         navWrap.classList.add('active');
+//     },300)
+//     setTimeout(()=>{
+//         characterContent.classList.add('active');
+//     },500)
     
    
     
-})
+// })
 jwNavLink[0].addEventListener('click',()=>{
 
     setTimeout(()=>{
@@ -43,3 +47,26 @@ jwNavLink[2].addEventListener('click',()=>{
     bgSection.classList.remove('active');
     section[1].classList.remove('active');
 })
+
+let isMain = false;
+for(let i =0; i< jwNavLink.length; i++){
+    jwNavLink[i].addEventListener('click',()=>{
+        // e.defaultPrevented();
+        for(let j = 0; j < jwNavLink.length; j++){
+            jwNavLink[j].classList.remove('active');
+        }
+        jwNavLink[i].classList.add('active');
+
+        if(jwNavLink[1]){
+            section[1].classList.add('active');
+            setTimeout(()=>{
+                clipBox.classList.add('active');
+                bgSection.classList.add('active');
+                navWrap.classList.add('active');
+            },300)
+            setTimeout(()=>{
+                characterContent.classList.add('active');
+            },500)
+        }
+    })
+}

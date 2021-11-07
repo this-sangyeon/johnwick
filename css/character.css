@@ -4,11 +4,10 @@ section:nth-of-type(2){
 }
 section:nth-of-type(2).active{
     visibility: visible;pointer-events:auto;
-    
  }
 .character-container{
     width: 100%; height: 100%;position: relative;
-    pointer-events: none;
+   
 }
 
 .character-container .nav-wrap{
@@ -68,7 +67,11 @@ section:nth-of-type(2).active{
     left: 0%; transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
 }
 .character-container .character-content{
-    width: 60%; height: 100%; z-index: 300; position: relative; left:9%;
+    width: 60%; height: 100%; z-index: 1000; position: relative; left:9%;
+    transition: 0.3s ease-in-out;opacity: 0; visibility: hidden; 
+}
+.character-container .character-content.active{
+    transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
 }
 .character-container .character-content .back-arrow{
    width: 6%; height: 6%;  position: absolute; top:13%;
@@ -103,10 +106,10 @@ section:nth-of-type(2).active{
 }
 .character-container .character-content .character-intro .character-box .character-text p:last-of-type{
     font-weight: 100;font-size: 1rem; color:#ffffff; 
-    margin: 0; line-height: 1.5rem; width: 70%; 
+    margin: 0; line-height: 1.5rem; width: 80%; height: 60%;
 }
 .character-container .character-content .character-intro .character-box .still-cut{
-    width: 100%;  margin-top: 5%;
+    width: 100%;  margin-top: 5%; height: 40%;
 }
 .character-container .character-content .character-intro .character-box .still-cut p{
     font-family: 'Montserrat', sans-serif; color:#ffffff;
@@ -117,7 +120,7 @@ section:nth-of-type(2).active{
     margin: 2% 0;
 }
 .character-container .character-content .character-intro .character-box .still-cut .still-list{
-    width:90%;  display: flex; flex-direction: column;
+    width:90%;  display: flex; flex-direction: column; height: 50%;
 }
 .character-container .character-content .character-intro .character-box .still-cut .still-list ul{
     width: 100%; display: flex; height: 50%; margin: 0; padding: 0;
