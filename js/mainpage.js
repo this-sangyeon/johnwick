@@ -12,12 +12,15 @@ let currentIndex = 0;
 const trailerBtn = document.querySelector('.trailer-btn');
 const trailerArea = document.querySelector('.trailer-area');
 const closeBtn = document.querySelector('.close-btn');
+let chapterArea = document.querySelectorAll('.trailer-chapter > .chapter-area');
+// let chapterLength
 let infoBtn = document.querySelectorAll('.InfoBtn > button')
 
 
 jwNavLink = Array.prototype.slice.call(jwNavLink);
 bgImages = Array.prototype.slice.call(bgImages);
 mainIntroArea = Array.prototype.slice.call(mainIntroArea);
+chapterArea = Array.prototype.slice.call(chapterArea);
 
 
 // 메인 네비게이션
@@ -63,7 +66,11 @@ chapterPrevBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
+    for(let i = 0; i < chapterArea.length; i++){
+        chapterArea[i].classList.remove('active');
+    }
     mainIntroArea[currentIndex].classList.add('active');
+    chapterArea[currentIndex].classList.add('active');
 })
 chapterNextBtn.addEventListener('click',()=>{
     currentIndex = currentIndex + 1;
@@ -72,5 +79,9 @@ chapterNextBtn.addEventListener('click',()=>{
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
+    for(let i = 0; i < chapterArea.length; i++){
+        chapterArea[i].classList.remove('active');
+    }
     mainIntroArea[currentIndex].classList.add('active');
+    chapterArea[currentIndex].classList.add('active');
 })

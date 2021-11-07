@@ -131,7 +131,11 @@ section {
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter{
    width: 100%; height: 90%; position: absolute; top:7%;
    display: flex;flex-direction: column; align-items: center; justify-content: center; 
+   visibility: hidden;opacity: 0;
 }
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter.active{
+    visibility: visible;opacity: 1;
+ }
 
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul{
     width: 100%; 
