@@ -21,6 +21,30 @@ section {
 .main-container .bg-section{
     width: 100%; height: 100%; position: relative;
 }
+/* chapter-arrow */
+.main-container .bg-section .chapter-arrow{
+      position: absolute; z-index: 100;
+   display: flex; bottom:7%; right:10%; 
+}
+.main-container .bg-section .chapter-arrow button{
+    z-index: 100; margin-left: 10px; margin-right: 10px;
+    width: 50px; height: 50px; background: none; 
+    border-radius: 50%; border:solid 1px white;
+    position: relative; cursor: pointer;
+}
+.main-container .bg-section .chapter-arrow button span{
+    width: 20px; height: 20px;
+    position: absolute; top:50%; left:50%; 
+    border-bottom: solid 1px white;  border-left: solid 1px white; 
+    display:block;
+}
+.main-container .bg-section .chapter-arrow .prev:first-child span{
+     transform: translate(-30%, -50%) rotate(45deg);
+
+}
+.main-container .bg-section .chapter-arrow .next:last-of-type span{
+    transform: translate(-70%, -50%) rotate(-135deg);
+}
 
 /* trailer-area */
 /* trailer-btn */
@@ -149,12 +173,20 @@ section {
     top:0; display: flex; justify-items: center; align-items: center;
 }
 .main-container .main-area .main-content{
-    width: 80%; height: 50%; position: relative; flex-direction: column;
-    top:0%; display: flex; left: 20%;
+    width: 80%; height: 70%; position: relative; flex-direction: column;
+    top:5%; display: flex; left: 20%;
 }
 .main-container .main-area .main-content .main-intro{
     width: 100%; height: 100%; position: absolute;
     top:0; display: flex; flex-direction: column;
+    visibility: hidden;
+    transition: ease 0.5s;
+    opacity: 0;
+}
+.main-container .main-area .main-content .main-intro.active{
+    visibility: visible;
+   transition: ease 0.5s;
+   opacity: 1;
 }
 .main-container .main-area .main-content .main-intro .main-text{
     width: 100%; height: 50%; display: flex; flex-direction: column;
@@ -165,7 +197,6 @@ section {
 .main-container .main-area .main-content .main-intro .main-text .title-img img{
     width: 100%;
 }
-
 .main-container .main-area .main-content .main-intro .main-text h2{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 300;font-size: 2rem; color:#ffffff; letter-spacing: 1px;
@@ -175,10 +206,10 @@ section {
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 100;font-size: 1rem; color:#ffffff;
     text-decoration: none; margin:0;
-    width: 75%; text-align: justify;
+    width: 80%;height: 30%; text-align: justify;
 }
 .main-container .main-area .main-content .main-intro .main-text .movie-Info{
-    width: 100%; height: 15%; margin-top: 5%; 
+    width: 100%; height: 10%; position: absolute; top:50%;
 }
 .main-container .main-area .main-content .main-intro .main-text .movie-Info ul{
     width: 70%;margin:0; padding: 0;
@@ -196,29 +227,28 @@ section {
 }
 
 .main-container .main-area .main-content .main-intro .main-text .InfoBtn{
-    width: 100%; height: 30%; 
+    width: 100%; height: 30%; position: absolute; bottom:5%;
 }
 .main-container .main-area .main-content .main-intro .main-text .InfoBtn button{
-    width: 25%;
-    height: 30%; border-radius: 20px; padding: 3%; position: relative;
-    border:solid 1px white; background: none; margin-right:2%; margin-top:10%;
+    width: 25%; height: 20%; border-radius: 20px;  position: relative;
+    border:solid 1px white; background: none; margin-right:2%;
 }
 .main-container .main-area .main-content .main-intro .main-text .InfoBtn button p{
     width: 100%; padding:0; text-align: center; 
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 300;font-size: 1rem; text-transform: uppercase;
-    position: absolute;top:50%;left: 0;transform: translateY(-50%);
+    position: absolute;top:50%;left: 0;transform: translateY(-50%); line-height: 13px;
  }
 
 
 
 /* footer */
 footer{
-    width: 100%; z-index: 1000; height: 5%;
+    width: 50%; z-index: 1000; height: 5%;
     position: fixed; bottom:10%;
 }
 footer .footer-area{
-    width: 50%; height: 100%; position: absolute; left:5%;
+    width: 100%; height: 100%; position: absolute; left:10%;
 }
  footer .footer-area ul{
    width: 100%;
