@@ -36,9 +36,7 @@ header .jw-nav ul li > a{
     text-decoration: none; text-transform: uppercase;
     transition: 0.3s ease-in-out;
 }
-header .jw-nav ul li > a:hover{
-    /* color:red; transition: 0.3s ease-in-out; */
-}
+
 header .jw-nav ul li > a{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 1rem; color:#ffffff; letter-spacing: 2px;

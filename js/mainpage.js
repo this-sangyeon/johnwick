@@ -7,14 +7,17 @@ let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
 let introLength = mainIntroArea.length;
 let currentIndex = 0;
 
-
+const loadLinkEl= document.querySelector('.isMovieLink');
+let getLink = loadLinkEl.getAttribute('href');
+let movielink = ['https://page.kakao.com/home?seriesId=50653596','https://page.kakao.com/home?seriesId=50653662','https://page.kakao.com/home?seriesId=53491878'];
 // 트레일러
 const trailerBtn = document.querySelector('.trailer-btn');
 const trailerArea = document.querySelector('.trailer-area');
 const closeBtn = document.querySelector('.close-btn');
 let chapterArea = document.querySelectorAll('.trailer-chapter');
 // let chapterLength
-let infoBtn = document.querySelectorAll('.InfoBtn > button')
+let infoBtn = document.querySelectorAll('.InfoBtn > a >button')
+
 
 
 jwNavLink = Array.prototype.slice.call(jwNavLink);
@@ -22,6 +25,12 @@ bgImages = Array.prototype.slice.call(bgImages);
 mainIntroArea = Array.prototype.slice.call(mainIntroArea);
 chapterArea = Array.prototype.slice.call(chapterArea);
 
+// console.log(loadLinkEl.getAttribute('href'));
+// // getLink = link[target];
+// console.log(getLink);
+
+
+// loadLinkEl.setAttribute('href', movielink[target]);
 // 메인 네비게이션
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',()=>{
@@ -57,8 +66,9 @@ for(let i = 0; i <infoBtn.length; i++){
         infoBtn[i].style.transition = "0.3s ease-in"
     })
 }
-
-chapterPrevBtn.addEventListener('click',()=>{
+console.log(movielink);
+console.log(loadLinkEl);
+chapterPrevBtn.addEventListener('click',(e)=>{
     currentIndex = currentIndex - 1;
     currentIndex < 0 && (currentIndex = introLength - 1);
     console.log(currentIndex);
@@ -68,19 +78,31 @@ chapterPrevBtn.addEventListener('click',()=>{
     for(let i = 0; i < chapterArea.length; i++){
         chapterArea[i].classList.remove('active');
     }
+    for(let i = 0; i < movielink.length; i++){
+        loadLinkEl.setAttribute('href', movielink[i]);
+    }
     mainIntroArea[currentIndex].classList.add('active');
     chapterArea[currentIndex].classList.add('active');
 })
+
+
+
+
 chapterNextBtn.addEventListener('click',()=>{
     currentIndex = currentIndex + 1;
     currentIndex > introLength - 1 && (currentIndex = 0);
     console.log(currentIndex);
+    // console.log(loadLinkEl);
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
     for(let i = 0; i < chapterArea.length; i++){
         chapterArea[i].classList.remove('active');
     }
+    for(let i = 0; i < movielink.length; i++){
+        loadLinkEl.setAttribute('href', movielink[i]);
+    }
     mainIntroArea[currentIndex].classList.add('active');
     chapterArea[currentIndex].classList.add('active');
 })
+
