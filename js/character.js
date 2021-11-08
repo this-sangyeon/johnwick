@@ -1,12 +1,13 @@
 const clipBox = document.querySelector('.box');
 const bgSection = document.querySelector('.character-container > .bg-section');
-const characterBgImg = document.querySelector('.character-container > .bg-section > bg-imgs > img');
+let characterBgImgAll = document.querySelectorAll('.character-container > .bg-section > .bg-imgs > img');
 const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
-let characterIntro = document.querySelectorAll('.character-intro');
+let characterIntro = document.querySelectorAll('.character-content > .character-intro');
+let characterNavEls = document.querySelectorAll('.character-nav > ul > li > p');
 
-
-
+characterIntro = Array.prototype.slice.call(characterIntro);
+characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
 
 let isSection = false;
 for(let i =0; i< jwNavLink.length; i++){
@@ -23,10 +24,10 @@ for(let i =0; i< jwNavLink.length; i++){
                 clipBox.classList.add('active');
                 bgSection.classList.add('active');
                 navWrap.classList.add('active');
-            },300)
+            },100)
             setTimeout(()=>{
                 characterContent.classList.add('active');
-            },500)
+            },400)
             isSection = true;
         }else{
             clipBox.classList.remove('active');
@@ -37,5 +38,22 @@ for(let i =0; i< jwNavLink.length; i++){
             isSection = false;
            
         }
+    })
+}
+
+for(let i = 0; i < characterNavEls.length; i++){
+    characterNavEls[i].addEventListener('click',()=>{
+        for(let j = 0; j < characterNavEls.length; j++){
+            characterNavEls[j].classList.remove('active');
+        }
+        for(let i = 0; i < characterBgImgAll.length; i++){
+            characterBgImgAll[i].classList.remove('active');
+        }
+        for(let i = 0; i < characterIntro.length; i++){
+            characterIntro[i].classList.remove('active');
+        }
+        characterNavEls[i].classList.add('active');
+        characterBgImgAll[i].classList.add('active');
+        characterIntro[i].classList.add('active');
     })
 }

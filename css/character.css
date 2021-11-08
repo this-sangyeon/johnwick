@@ -34,9 +34,12 @@ section:nth-of-type(2).active{
 }
 .character-container .nav-wrap .character-nav ul li p{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
-    font-weight: 500;font-size: 1rem; color:#ffffff; 
+    font-weight: 500;font-size: 1rem; color:#ffffff82; 
     margin: 0;
     width: 50%; position: relative; left: 50%; transform: translateX(-50%);
+}
+.character-container .nav-wrap .character-nav ul li p.active{
+    font-weight: 500;font-size: 1rem; color:#ffffff; 
 }
 .character-container .bg-section{
     position: absolute; width: 60%;height: 100%; right:-5%;pointer-events: none;
@@ -50,13 +53,16 @@ section:nth-of-type(2).active{
     position: relative; width: 100%; height: 100%;
 }
 .character-container .bg-section .black-box {
-    position: absolute; width: 100%; height: 100%; right:0; background-color: rgba(0, 0, 0, 0.378);
+    position: absolute; width: 100%; height: 100%; right:0; background-color: rgba(0, 0, 0, 0.665);
     z-index: 100;
 }
-.character-container .bg-section  .bg-imgs img{
+.character-container .bg-section  .bg-imgs > img{
    position: absolute; width: 100%; height: 100%; object-position: 0% 50%;
-   object-fit: cover;
+   object-fit: cover; transition: 0.3s ease-in-out;opacity: 0; visibility: hidden; 
 }
+.character-container .bg-section  .bg-imgs > img.active{
+    transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
+ }
 .character-container .box{
     position: absolute; width: 55%;height: 100%; left: -5%; 
     background-color: #4F0BC1; z-index: 100;
@@ -87,6 +93,10 @@ section:nth-of-type(2).active{
 .character-container .character-content .character-intro{
     width: 85%; height: 100%; position: absolute; 
     display: flex; justify-content: center;align-items: center;
+    transition: 0.3s ease-in-out;opacity: 0; visibility: hidden; 
+}
+.character-container .character-content .character-intro.active{
+    transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
 }
 .character-container .character-content .character-intro .character-box{
     width: 100%; height: 70%; position: relative; 
@@ -157,6 +167,9 @@ section:nth-of-type(2).active{
     -webkit-filter: grayscale(0);
    filter: grayscale(0); 
 }
-.still-cut .still-list ul .cutWrap figure:hover span{
-   display: none;
-}
+/* .still-cut .still-list ul .cutWrap figure:hover span{
+   
+} */
+/* .still-cut .still-list ul .cutWrap figure:hover span{
+    visibility: hidden;
+} */

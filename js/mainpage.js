@@ -51,12 +51,6 @@ bgImages = Array.prototype.slice.call(bgImages);
 mainIntroArea = Array.prototype.slice.call(mainIntroArea);
 chapterArea = Array.prototype.slice.call(chapterArea);
 
-// console.log(loadLinkEl.getAttribute('href'));
-// // getLink = link[target];
-// console.log(getLink);
-
-
-// loadLinkEl.setAttribute('href', movielink[target]);
 // 메인 네비게이션
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',()=>{
@@ -93,7 +87,6 @@ for(let i = 0; i <infoBtn.length; i++){
     })
 }
 // console.log(movielink);
-// console.log(loadLinkEl);
 // 왼키
 chapterPrevBtn.addEventListener('click',()=>{
     currentIndex = currentIndex - 1;
