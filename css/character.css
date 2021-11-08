@@ -16,7 +16,7 @@ section:nth-of-type(2).active{
 }
 .character-container .nav-wrap.active{
     width: 15%; height: 100%;position: absolute; right:0%;
-    z-index: 1000;pointer-events: auto;
+    z-index: 5000;pointer-events: auto;
 }
 
 .character-container .nav-wrap .character-nav {

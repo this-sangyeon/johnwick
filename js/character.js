@@ -28,17 +28,14 @@ for(let i =0; i< jwNavLink.length; i++){
                 characterContent.classList.add('active');
             },500)
             isSection = true;
-            clipBox.classList.remove('active');
-            bgSection.classList.remove('active');
-            section[1].classList.remove('active');
-            characterContent.classList.remove('active');
-            isSection = true;
         }else{
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
             section[1].classList.remove('active');
             characterContent.classList.remove('active');
+            navWrap.classList.remove('active');
             isSection = false;
+           
         }
     })
 }

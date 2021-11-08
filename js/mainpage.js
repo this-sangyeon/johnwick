@@ -23,17 +23,17 @@ let trailerLink =[
     {
         link:['https://tv.naver.com/v/275348','https://tv.naver.com/v/271753','https://tv.naver.com/v/238286'],
         img:['img/main/jw2.jpeg','img/main/jw1.jpeg','img/main/jw3.jpeg'],
-        text: ['Main preview','15-second preview','30-second preview']
+        text: ['Chapter1 Main preview','Chapter1 15-second preview','Chapter1 30-second preview']
      },
      {
         link:['https://tv.naver.com/v/1404546','https://tv.naver.com/v/1427189','https://tv.naver.com/v/1425968'],
         img:['img/main/jw3.jpeg','img/main/jw2.jpeg','img/main/jw1.jpeg'],
-        text: ['Main previ!!!ew','15-second preview','30-second preview']
+        text: ['Chapter2 Main preview','Chapter2 15-second preview','Chapter2 30-second preview']
      },
      {
         link:['https://tv.naver.com/v/275348','https://tv.naver.com/v/275348','https://tv.naver.com/v/275348'],
         img:['img/main/jw1.jpeg','img/main/jw3.jpeg','img/main/jw2.jpeg'],
-        text: ['Main preview','15-second preview','30-second preview']
+        text: ['Chapter3 Main preview','Chapter3 15-second preview','Chapter3 30-second preview']
      }
 ]
 
