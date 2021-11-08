@@ -9,7 +9,8 @@ let characterNavEls = document.querySelectorAll('.character-nav > ul > li > p');
 characterIntro = Array.prototype.slice.call(characterIntro);
 characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
 
-let isSection = false;
+let isCharacter = false;
+let isGallery = false;
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',()=>{
         // e.defaultPrevented();
@@ -17,8 +18,8 @@ for(let i =0; i< jwNavLink.length; i++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
-        
-        if(!isSection){
+        if(jwNavLink[2])
+        if(!isCharacter){
             section[1].classList.add('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
@@ -29,15 +30,18 @@ for(let i =0; i< jwNavLink.length; i++){
                 characterContent.classList.add('active');
             },400)
             isSection = true;
-        }else{
-            clipBox.classList.remove('active');
-            bgSection.classList.remove('active');
-            section[1].classList.remove('active');
-            characterContent.classList.remove('active');
-            navWrap.classList.remove('active');
-            isSection = false;
-           
         }
+        // else if(!isGallery)
+
+        // else{
+        //     clipBox.classList.remove('active');
+        //     bgSection.classList.remove('active');
+        //     section[1].classList.remove('active');
+        //     characterContent.classList.remove('active');
+        //     navWrap.classList.remove('active');
+        //     isSection = false;
+           
+        // }
     })
 }
 

@@ -14,6 +14,10 @@ section {
     width: 100%; height: 100%; position: absolute;
     background: black;
 }
+section:first-of-type {
+    width: 100%; height: 100%; position: absolute;
+    background: black;display: none;
+}
 
 /* main*/
 .main-container{
@@ -154,7 +158,7 @@ section {
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a > h4{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 1rem; color:#ffffff; margin-bottom:0;
-    text-decoration: none; text-transform: uppercase;margin-top: 3%;
+    text-decoration: none; text-transform: uppercase;margin-top: 3%; letter-spacing: 2px;
 }
 
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area img{
@@ -162,8 +166,8 @@ section {
 }
 
 .main-container .box-shadow{
-    width: 50%;height: 100%; 
-    background:linear-gradient(to right, rgba(0, 0, 0, 0.645) 70%, rgba(0, 0, 0, 0));
+    width: 60%;height: 100%; 
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.652) 60%, rgba(0, 0, 0, 0));
     position: absolute; z-index: 1;
 }
 .main-container  .bg-section .bg-img{
