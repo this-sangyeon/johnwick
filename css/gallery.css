@@ -1,4 +1,17 @@
 section:nth-of-type(3){
-    z-index: 1000;width: 100%; height: 100%;
-    position: absolute; background-color: blueviolet;
+   width: 100%; height: 100%;
+    background-color: blueviolet;
  }
+
+.gallery-container{
+    width: 100vw; height: 50%; position: fixed; background-color: blue;
+}
+.gallery-container .bg-section{
+    width: 100vw; height: 50%; position: fixed; 
+}
+/* .gallery-container .bg-section img{
+    width: 90vw; height: 100%; position: fixed; object-fit: cover;
+} */
+.gallery-container .poster-area .poster-content .poster-list img{
+    width: 100px; position: absolute;
+}
