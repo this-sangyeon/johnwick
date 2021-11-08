@@ -5,22 +5,8 @@ const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
 let characterIntro = document.querySelectorAll('.character-intro');
 
-jwNavLink[0].addEventListener('click',()=>{
 
-    setTimeout(()=>{
-        clipBox.classList.remove('active');
-        bgSection.classList.remove('active');
-        navWrap.classList.remove('active');
-    },700)
-    setTimeout(()=>{
-        section[1].classList.remove('active');
-    },800)
-})
-jwNavLink[2].addEventListener('click',()=>{
-    clipBox.classList.remove('active');
-    bgSection.classList.remove('active');
-    section[1].classList.remove('active');
-})
+
 
 let isSection = false;
 for(let i =0; i< jwNavLink.length; i++){
@@ -30,8 +16,8 @@ for(let i =0; i< jwNavLink.length; i++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
-
-        if(!isSection === true){
+        
+        if(!isSection){
             section[1].classList.add('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
@@ -41,6 +27,18 @@ for(let i =0; i< jwNavLink.length; i++){
             setTimeout(()=>{
                 characterContent.classList.add('active');
             },500)
+            isSection = true;
+            clipBox.classList.remove('active');
+            bgSection.classList.remove('active');
+            section[1].classList.remove('active');
+            characterContent.classList.remove('active');
+            isSection = true;
+        }else{
+            clipBox.classList.remove('active');
+            bgSection.classList.remove('active');
+            section[1].classList.remove('active');
+            characterContent.classList.remove('active');
+            isSection = false;
         }
     })
 }
