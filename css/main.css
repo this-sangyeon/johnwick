@@ -16,7 +16,7 @@ section {
 }
 section:first-of-type {
     width: 100%; height: 100%; position: absolute;
-    background: black;display: none;
+    background: black;
 }
 
 /* main*/

@@ -1,17 +1,49 @@
+*{
+    box-sizing: border-box;
+}
 section:nth-of-type(3){
-   width: 100%; height: 100%;
+    z-index: 1000;width: 100vw; height: 100%;
     background-color: blueviolet;
  }
 
 .gallery-container{
-    width: 100vw; height: 50%; position: fixed; background-color: blue;
+    width: 100vw; height: 100vh; position: absolute; 
 }
 .gallery-container .bg-section{
-    width: 100vw; height: 50%; position: fixed; 
+    width: 100%; height: 100%; position: absolute; 
 }
-/* .gallery-container .bg-section img{
-    width: 90vw; height: 100%; position: fixed; object-fit: cover;
-} */
-.gallery-container .poster-area .poster-content .poster-list img{
-    width: 100px; position: absolute;
+.gallery-container .bg-section .black-box{
+    width: 100%; height: 100%; position: absolute; background-color: #120824;
+}
+.gallery-container .bg-section img{
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
+}
+.gallery-container .poster-area{
+    position: fixed; width: 100%; height: 100%;
+}
+.gallery-container .poster-area h1{
+    position: absolute; 
+}
+.gallery-container .poster-area .poster-content{
+    width: 100%; height:100%; position: absolute; 
+}
+.gallery-container .poster-area .poster-content .poster-list{
+    width: 100%; height:100%; position: absolute;
+}
+.gallery-container .poster-area .poster-content .poster-list ul{
+    width: 100%;
+    position: absolute; top:0%; right:0%; margin: 0;
+    
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li {
+    list-style: none;
+    transform-origin: 150% 50%; 
+    position: absolute;
+    width: 400px; height: 500px;
+    float: left;
+    overflow: hidden;
+    
+}
+.gallery-container .poster-area .poster-content .poster-list >ul>li>img{
+    width: 400px; object-fit: cover; position: absolute;
 }

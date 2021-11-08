@@ -12,11 +12,11 @@ section:nth-of-type(2).active{
 
 .character-container .nav-wrap{
     width: 15%; height: 100%;position: absolute; right:-15%;
-    z-index: 1000; pointer-events: none;
+    z-index: 1000; pointer-events: none; display: none;
 }
 .character-container .nav-wrap.active{
     width: 15%; height: 100%;position: absolute; right:0%;
-    z-index: 5000;pointer-events: auto;
+    z-index: 5000;pointer-events: auto;display: block;
 }
 
 .character-container .nav-wrap .character-nav {
@@ -42,7 +42,7 @@ section:nth-of-type(2).active{
     font-weight: 500;font-size: 1rem; color:#ffffff; 
 }
 .character-container .bg-section{
-    position: absolute; width: 60%;height: 100%; right:-5%;pointer-events: none;
+    position: absolute; width: 60%;height: 100%; right:0%;pointer-events: none;
     transition: 0.3s ease-in-out; opacity: 0; visibility: hidden; 
 }
 .character-container .bg-section.active{
