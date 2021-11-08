@@ -13,7 +13,7 @@ section:nth-of-type(3){
     width: 100%; height: 100%; position: absolute; 
 }
 .gallery-container .bg-section .black-box{
-    width: 100%; height: 100%; position: absolute; background-color: #120824;
+    width: 100%; height: 100%; position: absolute; background-color: #6544a3;
 }
 .gallery-container .bg-section img{
     width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
@@ -31,19 +31,19 @@ section:nth-of-type(3){
     width: 100%; height:100%; position: absolute;
 }
 .gallery-container .poster-area .poster-content .poster-list ul{
-    width: 100%;
-    position: absolute; top:0%; right:0%; margin: 0;
+    width: 100%; height: 100%;
+    position: absolute; top:50%; margin: 0;
+    transform: translateY(-50%);
     
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li {
     list-style: none;
-    transform-origin: 150% 50%; 
-    position: absolute;
-    width: 400px; height: 500px;
-    float: left;
-    overflow: hidden;
-    
+    /* transform-origin: 150% 0%;  */
+    position: absolute;top: 50%;right:50%;
+    transform: translate(-50%, -50%);
+    width: 200px; height: 300px;
+    overflow: hidden; 
 }
 .gallery-container .poster-area .poster-content .poster-list >ul>li>img{
-    width: 400px; object-fit: cover; position: absolute;
+    width: 200px; object-fit: cover; position: absolute;
 }
