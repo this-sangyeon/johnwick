@@ -4,14 +4,14 @@
 section:nth-of-type(3){
     z-index: 1000;width: 100vw; height: 100%;
     background-color: blueviolet;
-    display: none;
+    /* display: none; */
  }
 
 .gallery-container{
-    width: 100vw; height: 100vh; position: absolute; 
+    width: 100%; height: 100%; position: fixed; 
 }
 .gallery-container .bg-section{
-    width: 100%; height: 100%; position: absolute; 
+    width: 100%; height: 100%; position: fixed; 
 }
 .gallery-container .bg-section .black-box{
     width: 100%; height: 100%; position: absolute; background-color: #6544a3;
@@ -29,19 +29,18 @@ section:nth-of-type(3){
     width: 100%; height:100%; position: absolute; 
 }
 .gallery-container .poster-area .poster-content .poster-list{
-    width: 50%; height:100%; position: absolute;
-    display: flex; align-items: center; justify-content: centers; justify-items: center;
+    width: 100%; height:100%; 
+    position: absolute;
+     /* animation: rotate 10s infinite linear;  */
+     display: flex; justify-content: center;align-items: center;justify-items: center;
 }
 .gallery-container .poster-area .poster-content .poster-list ul{
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
-    position: absolute;
-    margin: 0; padding:0;
-    animation: rotate 10s infinite linear; 
-    transform-origin: 50% 150%;
-    
-    /* display: flex; align-items: center; justify-content: centers; justify-items: center; */
+    /* animation: rotate 10s infinite linear;  */
+    position: absolute; 
+    /* top:50%; transform:translateY(-50%) ;     */
+    /* top:50%; left: 50%; transform: translate(-50%, -50%); */
+    margin: 0; padding:0; 
+    right:59%;
 }
 
 @keyframes rotate{
@@ -49,22 +48,16 @@ section:nth-of-type(3){
     from { transform: rotate(360deg); }
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li {
-    top:50%; left: 50%; transform: translate(-50%,  -50%);
-    width: 300px;
-    height: 400px;
-    /* transform-origin: 50% 150%; */
-    position: absolute;
-    pointer-events: none; 
-    list-style: none;
-    /* margin: 50% 0; */
     transform-origin: 50% 150%;
+    width: 300px; height: 500px;
+    position: absolute;
+    list-style: none;
 }
 
 .gallery-container .poster-area .poster-content .poster-list ul > li > span {
     display: inline-block;
-    margin: 25% 0;
-    width: 300px;
-    height: 400px;
+    /* margin: 25% 0; */
+    width: 100%; height: 100%;
     
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li > span img {
@@ -75,7 +68,7 @@ section:nth-of-type(3){
     transform: rotate(0deg) translate(0, -50%);
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(2){
-    transform: rotate(30deg) translate(50%, -50%);
+    transform: rotate(30deg) translate(0%, -50%);
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(3){
     transform: rotate(60deg) translate(0, -50%);
