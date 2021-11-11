@@ -1,0 +1,59 @@
+/* 커서 css */
+.cursor-point, .cursor-round,
+.cursor-tail {
+	position: fixed;
+	border-radius: 50%;
+	transform: translate(-50%,-50%) translateZ(0);
+	pointer-events: none;
+	top: 50%;
+	left: 50%;
+  	z-index: 99999999;
+	
+}
+/* 마치 과녁인 듯... 존윅을 향해 저격하는 적의 총알을 표현한 커서  */
+.cursor-round{
+	width: 50px;
+	height: 50px;
+	border: solid 1px red;
+}
+.cursor-point {
+	width: 7px;
+	height: 7px;
+	background-color: red;
+}
+
+/* 꼬리를 두개 두개 설정하여서 존 윅이 수많은 사람들에게 저격 당하는 것을 표현
+언제나 총이 존윅을 쫒아다닌다.. 를 표현 */
+.cursor-tail {
+	width: 5px;
+	height: 5px;
+	transition: all 150ms ease-out;
+	background-color: red;
+}
+.cursor-tail2 {
+	width: 2px;
+	height: 2px;
+	transition: all 500ms ease-out;
+	background-color: red;
+}
+
+.cursor-click {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 1px solid red;
+    animation: cursorAnimation 400ms;
+
+}
+
+@keyframes cursorAnimation {
+	{
+		transform: scale(2.4);
+		opacity: 0;
+	}
+}

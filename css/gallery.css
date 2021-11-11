@@ -19,28 +19,29 @@ section:nth-of-type(3){
 .gallery-container .bg-section img{
     width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
 }
+
 .gallery-container .poster-area{
     position: fixed; width: 100%; height: 100%;
 }
 .gallery-container .poster-area h1{
-    position: absolute; 
+    position: absolute; z-index: 1000;
+    font-family: 'Montserrat', sans-serif; cursor: pointer;
+    font-weight: 500;font-size: 5rem; color:#ffffff; 
 }
 .gallery-container .poster-area .poster-content{
     width: 100%; height:100%; position: absolute; 
 }
 .gallery-container .poster-area .poster-content .poster-list{
-    width: 100%; height:100%; 
+    width: 100%; height: 100vh;;
     position: absolute;
-     /* animation: rotate 10s infinite linear;  */
-     /* display: flex; justify-content: center;align-items: center;justify-items: center; */
+    overflow-y: scroll;
 }
 .gallery-container .poster-area .poster-content .poster-list ul{
-    /* animation: rotate 10s infinite linear;  */
+    width: 500px; height:500px; 
     position: absolute; 
-    /* top:50%; transform:translateY(-50%) ;     */
-    /* top:50%; left: 50%; transform: translate(-50%, -50%); */
+    top:50%; left: 50%; transform: translate(-50%, -50%);
     margin: 0; padding:0; 
-    left:50%;
+    display: flex; justify-content: center;align-items: center;justify-items: center;
 }
 
 @keyframes rotate{
@@ -55,7 +56,7 @@ section:nth-of-type(3){
 }
 
 
-.gallery-container .poster-area .poster-content .poster-list ul > li > img {
+/* .gallery-container .poster-area .poster-content .poster-list ul > li > img {
     width: 100%; height: 100%; object-fit: cover;
 }
  
@@ -94,4 +95,4 @@ section:nth-of-type(3){
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(12){
     transform: rotate(330deg) translate(0, -50%);
-}
+} */
