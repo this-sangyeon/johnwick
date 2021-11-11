@@ -7,7 +7,7 @@ let range =200;
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
-    // let screen_center = document.documentElement.scrollTop + window.innerHeight/2;
+    let screen_center = document.documentElement.scrollTop + window.innerHeight/2;
     // console.log(screen_center);
 
     // for(let i = 0; i < posterListEl.length; i++){
@@ -19,8 +19,24 @@ posterListContainer.addEventListener('scroll',()=>{
     //         one_poster.classList.remove('active');
     //     }
     // }
-    if(value < 200 ){
-        posterListEl[0].style.left ="10%"; 
+    if(value == 0 ){
+        posterListEl[0].style.left ="5%"; 
+        posterListEl[0].style.top ="5%"; 
+        posterListEl[0].style.transition ="0.3s";
+    }
+    if(value >= 500 && value < 800 ){
+        setTimeout(()=>{
+            posterListEl[0].style.left ="10%"; 
+            posterListEl[0].style.top ="25%"; 
+            posterListEl[0].style.transition ="0.3s";
+        },1000)
+        // posterListEl[0].style.left ="10%"; 
+        // posterListEl[0].style.top ="25%"; 
+        // posterListEl[0].style.transition ="0.3s";
+    }
+    if(value >= 800 && value < 1200 ){
+        posterListEl[0].style.left ="15%"; 
+        posterListEl[0].style.top ="25%"; 
         posterListEl[0].style.transition ="0.3s";
     }
 })
