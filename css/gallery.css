@@ -14,7 +14,7 @@ section:nth-of-type(3){
     width: 100%; height: 100%; position: fixed; 
 }
 .gallery-container .bg-section .black-box{
-    width: 100%; height: 100%; position: absolute; background-color: #6544a3;
+    width: 100%; height: 100%; position: absolute; background-color: #10091d;
 }
 .gallery-container .bg-section img{
     width: 100%; height: 100%; object-fit: cover; opacity: 0.4;
@@ -34,65 +34,56 @@ section:nth-of-type(3){
 .gallery-container .poster-area .poster-content .poster-list{
     width: 100%; height: 100vh;;
     position: absolute;
-    overflow-y: scroll;
 }
 .gallery-container .poster-area .poster-content .poster-list ul{
-    width: 500px; height:500px; 
+   width: 100%;height: 100vh; 
     position: absolute; 
-    top:50%; left: 50%; transform: translate(-50%, -50%);
-    margin: 0; padding:0; 
-    display: flex; justify-content: center;align-items: center;justify-items: center;
+    margin: 0; padding:0;
+    overflow-y: scroll;
 }
 
-@keyframes rotate{
-    from { transform: rotate(0deg); }
-    from { transform: rotate(360deg); }
-}
 .gallery-container .poster-area .poster-content .poster-list ul > li {
-    transform-origin: 50% 150%;
-    width: 300px; height: 400px;
-    position: absolute;
-    list-style: none;
+    width: auto; height: 600px;
+    position: absolute; margin-top: 15%;
+    list-style: none; cursor: pointer;
 }
-
-
-/* .gallery-container .poster-area .poster-content .poster-list ul > li > img {
+.gallery-container .poster-area .poster-content .poster-list ul > li > img {
     width: 100%; height: 100%; object-fit: cover;
 }
  
 .gallery-container .poster-area .poster-content .poster-list ul > li:first-child {
-    transform: rotate(0deg) translate(0, -50%);
+    top:5%;left:5%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(2){
-    transform: rotate(30deg) translate(0, -50%);
+    top:0%;left:50%; transform: translateX(-50%);
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(3){
-    transform: rotate(60deg) translate(0, -50%);
+    right:5%;top:5%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(4){
-    transform: rotate(90deg) translate(0, -50%);
+    top:70%;left:30%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(5){
-    transform: rotate(120deg) translate(0, -50%);
+    top:80%;left:5%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(6){
-    transform: rotate(150deg) translate(0, -50%);
+    top:70%;left:10%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(7){
-    transform: rotate(180deg) translate(0, -50%);
+    top:100%;right:10%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(8){
-    transform: rotate(210deg) translate(0, -50%);
+    top:150%; left:30%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(9){
-    transform: rotate(240deg) translate(0, -50%);
+    top:70%; right:5%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(10){
-    transform: rotate(270deg) translate(0, -50%);
+    top:150%;left:5%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(11){
-    transform: rotate(300deg) translate(0, -50%);
+    top:200%; left:25%;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(12){
-    transform: rotate(330deg) translate(0, -50%);
-} */
+    top:250%;right:10%;
+}
