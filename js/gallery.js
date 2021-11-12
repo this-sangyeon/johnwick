@@ -2,7 +2,7 @@ let posterListEl = document.querySelectorAll('.poster-content > .poster-list > u
 const posterListContainer = document.querySelector('.poster-content');
 
 posterListEl = Array.prototype.slice.call(posterListEl);
-let range =200;
+let range = 200;
 
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
@@ -20,14 +20,25 @@ posterListContainer.addEventListener('scroll',()=>{
     //     }
     // }
    
-    if(value < 600){
+    if(value < 200){
         posterListEl[0].style.top ="5%";
         posterListEl[0].style.left ="5%";
         posterListEl[3].classList.remove('active');
+        posterListEl[4].classList.remove('active');
+        posterListEl[5].classList.remove('active');
     
     }
-    if(value >= 600 && value < 1200 ){
+    if(value >= 600 + range && value - range){
         posterListEl[3].classList.add('active');
+        posterListEl[4].classList.add('active');
+        posterListEl[5].classList.add('active');
+
+    }
+    if(value >= 1300 + range && value - range){
+        posterListEl[3].classList.remove('active');
+        posterListEl[4].classList.remove('active');
+        posterListEl[5].classList.remove('active');
+
     }
     
 })
