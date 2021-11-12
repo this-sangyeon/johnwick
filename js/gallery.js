@@ -7,7 +7,7 @@ let range = 200;
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
-    // let screen_center = document.documentElement.scrollTop + window.innerHeight/2;
+    let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
     // console.log(screen_center);
 
     // for(let i = 0; i < posterListEl.length; i++){
@@ -28,16 +28,17 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[5].classList.remove('active');
     
     }
-    if(value >= 600 + range /2){
+    if(value >= 600 + range && screen_center - range){
         posterListEl[3].classList.add('active');
         posterListEl[4].classList.add('active');
         posterListEl[5].classList.add('active');
 
     }
-    if(value >= 1600 + range +100 /2){
+    if(value >= 1400  && screen_center - range){
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
         posterListEl[5].classList.remove('active');
+        posterListEl[6].classList.add('active');
 
     }
     
