@@ -1,8 +1,14 @@
-let posterListEl = document.querySelectorAll('.poster-content > .poster-list > ul > li');
 const posterListContainer = document.querySelector('.poster-content');
+let posterListEl = document.querySelectorAll('.poster-content > .poster-list > ul > li');
+
+const btt = document.getElementById('back-to-top');
+let range = 500;
+let scrollPos;
+let docHeight; 
 
 posterListEl = Array.prototype.slice.call(posterListEl);
-let range = 500;
+
+docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
 
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
@@ -29,13 +35,16 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[2].classList.add('active');
     
     }
-    if(value >= 600 && screen_center+range ){
+    if(value >= 600 && screen_center ){
         posterListEl[0].classList.remove('active');
         posterListEl[1].classList.remove('active');
         posterListEl[2].classList.remove('active');
         posterListEl[3].classList.add('active');
         posterListEl[4].classList.add('active');
         posterListEl[5].classList.add('active');
+        posterListEl[6].classList.remove('active');
+        posterListEl[7].classList.remove('active');
+        posterListEl[8].classList.remove('active');
 
     }
     if(value >= 1400 && screen_center){
@@ -62,3 +71,18 @@ posterListContainer.addEventListener('scroll',()=>{
     }
     
 })
+function scrollToTop(){
+    var scrollInterval = setInterval(()=>{
+        scrollPos = posterListContainer.scrollTop;
+        if(scrollPos != 0){
+            posterListContainer.scrollBy(0, -55);
+        }else{
+            clearInterval(scrollInterval);
+        }
+    }, 15);
+}
+
+btt.addEventListener('click', (e)=>{
+    e.preventDefault();
+    scrollToTop();
+});

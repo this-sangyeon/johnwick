@@ -18,8 +18,7 @@ for(let i =0; i< jwNavLink.length; i++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
-        if(jwNavLink[2])
-        if(!isCharacter){
+        if(isCharacter === false){
             section[1].classList.add('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
@@ -29,19 +28,22 @@ for(let i =0; i< jwNavLink.length; i++){
             setTimeout(()=>{
                 characterContent.classList.add('active');
             },400)
-            isSection = true;
+            section[2].classList.remove('active');
+            // isGallery= false;
+            isCharacter = true;
         }
-        // else if(!isGallery)
+        else{
+            section[1].classList.remove('active');
+            isCharacter = false;
+        }
 
-        // else{
-        //     clipBox.classList.remove('active');
-        //     bgSection.classList.remove('active');
-        //     section[1].classList.remove('active');
-        //     characterContent.classList.remove('active');
-        //     navWrap.classList.remove('active');
-        //     isSection = false;
-           
-        // }
+        if(isGallery === false){
+            section[2].classList.add('active');
+            isGallery =true;
+        }else{
+            section[2].classList.remove('active');
+            isGallery =false;
+        }
     })
 }
 
