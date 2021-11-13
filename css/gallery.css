@@ -54,13 +54,22 @@ section:nth-of-type(3){
 }
  
 .gallery-container .poster-area .poster-content .poster-list ul > li:first-child {
-    top:5%;left:5%;transition:0.3s ease-in-out; 
+    top:5%;left:0%;transition:0.3s ease-in-out; opacity: 0; transition:0.5s ease-in-out;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(2){
-    top:0%;left:50%; transform: translateX(-50%);
+    top:10%;left:50%; transform: translateX(-50%);opacity: 0; transition:0.5s ease-in-out;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(3){
-    right:5%;top:5%;
+    right:0%;top:5%;opacity: 0; transition:0.5s ease-in-out;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:first-child.active {
+    top:5%;left:5%;opacity: 1; transition:0.5s ease-in-out;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(2).active{
+    top:0%;left:50%; transform: translateX(-50%);opacity: 1; transition:0.5s ease-in-out;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(3).active{
+    right:5%;top:5%;opacity: 1; transition:0.5s ease-in-out;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(4){
     top:25%;left:0%; opacity: 0; transition:0.5s ease-in-out;
@@ -88,17 +97,32 @@ section:nth-of-type(3){
     top:45%;left:10%;transition:0.5s ease-in-out; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(8){
-    top:50%; left:50%;transform: translateX(-50%);
+    top:55%; left:50%;transform: translateX(-50%);transition:0.5s ease-in-out; opacity: 0;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(8).active{
+    top:50%; left:50%;transform: translateX(-50%);transition:0.5s ease-in-out; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(9){
-    top:48%; right:5%;
+    top:48%; right:0%;transition:0.5s ease-in-out; opacity: 0;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(9).active{
+    top:48%; right:5%;transition:0.5s ease-in-out; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(10){
-    bottom:10%;left:5%;
+    bottom:10%;left:0%;transition:0.5s ease-in-out; opacity: 0;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(10).active{
+    bottom:10%;left:5%;transition:0.5s ease-in-out; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(11){
-    bottom:5%; left:50%;transform: translateX(-50%);
+    bottom:0%; left:50%;transform: translateX(-50%);transition:0.5s ease-in-out; opacity: 0;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(11).active{
+    bottom:5%; left:50%;transform: translateX(-50%);transition:0.5s ease-in-out; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(12){
-    bottom:10%; right:7%;
+    bottom:10%; right:0%;transition:0.5s ease-in-out; opacity: 0;
+}
+.gallery-container .poster-area .poster-content .poster-list ul > li:nth-child(12).active{
+    bottom:10%; right:7%;transition:0.5s ease-in-out; opacity: 1;
 }
