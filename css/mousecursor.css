@@ -1,13 +1,14 @@
 /* 커서 css */
 .cursor-point, .cursor-round,
 .cursor-tail {
-	position: fixed;
+	position: absolute;
 	border-radius: 50%;
 	transform: translate(-50%,-50%) translateZ(0);
 	pointer-events: none;
 	top: 50%;
 	left: 50%;
   	z-index: 99999999;
+	
 	
 }
 /* 마치 과녁인 듯... 존윅을 향해 저격하는 적의 총알을 표현한 커서  */
@@ -30,12 +31,6 @@
 	transition: all 150ms ease-out;
 	background-color: red;
 }
-.cursor-tail2 {
-	width: 2px;
-	height: 2px;
-	transition: all 500ms ease-out;
-	background-color: red;
-}
 
 .cursor-click {
     content: '';
@@ -51,9 +46,9 @@
 
 }
 
-@keyframes cursorAnimation {
+/* @keyframes cursorAnimation {
 	{
 		transform: scale(2.4);
 		opacity: 0;
 	}
-}
+} */

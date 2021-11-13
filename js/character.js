@@ -1,6 +1,6 @@
 const clipBox = document.querySelector('.box');
 const bgSection = document.querySelector('.character-container > .bg-section');
-let characterBgImgAll = document.querySelectorAll('.character-container > .bg-section > .bg-imgs > img');
+let characterBgImgAll = document.querySelectorAll('.character-container .bg-section .bg-imgs > .bg-imgsWrap');
 const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
 let characterIntro = document.querySelectorAll('.character-content > .character-intro');
@@ -11,9 +11,9 @@ jwNavLink = Array.prototype.slice.call(jwNavLink);
 characterIntro = Array.prototype.slice.call(characterIntro);
 characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
 
-let isMain = false;
-let isCharacter = false;
-let isGallery = false;
+// let isMain = false;
+// let isCharacter = false;
+// let isGallery = false;
 
 
 // function characterSection(){
@@ -57,6 +57,7 @@ for(let i =0; i< jwNavLink.length; i++){
         if(target === 1){
             console.log(e.currentTarget);
             section[1].classList.add('active');
+            section[2].classList.remove('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
                 bgSection.classList.add('active');
@@ -64,8 +65,8 @@ for(let i =0; i< jwNavLink.length; i++){
             },100)
             setTimeout(()=>{
                 characterContent.classList.add('active');
-            },100)
-            section[2].classList.remove('active');
+            },300)
+
         }
         if(target === 2){
             section[1].classList.remove('active');
@@ -90,6 +91,10 @@ for(let i = 0; i < characterNavEls.length; i++){
         for(let i = 0; i < characterIntro.length; i++){
             characterIntro[i].classList.remove('active');
         }
+        // characterBgImgAll[i].style.transition = '1s';
+        // characterBgImgAll[i].style.opacity = '1';
+        characterBgImgAll[i].style.visibility = 'visible';
+
         characterNavEls[i].classList.add('active');
         characterBgImgAll[i].classList.add('active');
         characterIntro[i].classList.add('active');

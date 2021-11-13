@@ -42,7 +42,7 @@ section:nth-of-type(2).active{
     font-weight: 500;font-size: 1rem; color:#ffffff; 
 }
 .character-container .bg-section{
-    position: absolute; width: 60%;height: 100%; right:0%;pointer-events: none;
+    position: absolute; width: 40%;height: 100%; right:0%;pointer-events: none;
     transition: 0.3s ease-in-out; opacity: 0; visibility: hidden; 
 }
 .character-container .bg-section.active{
@@ -53,16 +53,31 @@ section:nth-of-type(2).active{
     position: relative; width: 100%; height: 100%;
 }
 .character-container .bg-section .black-box {
-    position: absolute; width: 100%; height: 100%; right:0; background-color: rgba(0, 0, 0, 0.665);
-    z-index: 100;
+    position: absolute; width: 100%; height: 100%; right:0; background-color: none;
+    /* z-index: 100; */
 }
-.character-container .bg-section  .bg-imgs > img{
-   position: absolute; width: 100%; height: 100%; object-position: 0% 50%;
-   object-fit: cover; transition: 0.3s ease-in-out;opacity: 0; visibility: hidden; 
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap {
+    position: absolute; 
+    width: 0vw; height: 0vw; 
+    left:50%;  top: 50%;  transform: translate(-50%,-50%); 
+    clip-path: circle(50% at 50% 50%);
+    opacity: 0; transition: ease-in 0.5s;
+    transform-origin: center;
+    
 }
-.character-container .bg-section  .bg-imgs > img.active{
-    transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
- }
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap.active {
+    width: 100vw;height: 100vw;
+    position: absolute;
+    opacity: 1; transition: ease-in 0.5s;
+}
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap img{
+    top: 50%;  transform: translate(-50%,-50%); 
+    left:50%; height: 100vh;
+    position: absolute;
+    object-fit: cover;
+    pointer-events: none;
+}
+
 .character-container .box{
     position: absolute; width: 55%;height: 100%; left: -5%; 
     background-color: #4F0BC1; z-index: 100;
