@@ -207,8 +207,6 @@ section:nth-of-type(2).active{
   visibility: hidden; opacity: 0; transition: 0.3s ease-in;
 }
 .character-container .bigimg-container .img-popup-area .img-popup.active{
-  position: absolute; top:50%; left:60%;
-  transform: translate(-50%, -50%);
   visibility: visible; opacity: 1; transition: 0.3s ease-in;
 }
 .character-container .bigimg-container .img-popup-area .img-popup > img{

@@ -17,10 +17,10 @@ let imgPopupElLink =  [
         img:['img/character/sofia/sofia1.jpg', 'img/character/sofia/sofia2.jpg', 'img/character/sofia/sofia3.jpg', 'img/character/sofia/sofia3.jpg']
     },
     {
-        img:['./img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg']
+        img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
     },
     {
-        img:['./img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg']
+        img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
     }
 ];
 // 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
@@ -34,54 +34,8 @@ imgPopupEl = Array.prototype.slice.call(imgPopupEl);
 imgPopupElImg =Array.prototype.slice.call(imgPopupElImg);
 let imgPopupLangth = imgPopupEl.length;
 
-for(let i = 0; i < cutWrap.length; i++){
-    cutWrap[i].addEventListener('click', (e)=>{
-        currentPopUpIndex = currentPopUpIndex + 1;
-        currentPopUpIndex > imgPopupLangth - 1 && (currentPopUpIndex = 0);
-        // console.log(currentPopUpIndex);
-       
-            imgPopupEl[i].classList.add('active');
-            bigimgContainer.classList.add('active');
-            stillChangeCut();
-    })
-    bigimgContainer.addEventListener('click', ()=>{
-        imgPopupEl[i].classList.remove('active');
-        bigimgContainer.classList.remove('active');
-           
-        
-    })
-}
 
 
-function stillChangeCut(){
-    for(let i = 0; i < cutWrap.length;i++){
-        imgPopupElImg[i].setAttribute('src', imgPopupElLink[currentPopUpIndex].img[i]);
-    }
-}
-// let isMain = false;
-// let isCharacter = false;
-// let isGallery = false;
-
-
-// function characterSection(){
-//     section[1].classList.add('active');
-//     setTimeout(()=>{
-//         clipBox.classList.add('active');
-//         bgSection.classList.add('active');
-//         navWrap.classList.add('active');
-//     },100)
-//     setTimeout(()=>{
-//         characterContent.classList.add('active');
-//     },400)
-// }
-
-// function characterSectionReset(){
-//     section[1].classList.remove('active');
-//     clipBox.classList.remove('active');
-//     bgSection.classList.remove('active');
-//     navWrap.classList.remove('active');
-//     characterContent.classList.remove('active');
-// }
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',(e)=>{
         let el = e.currentTarget, target = jwNavLink.indexOf(el);
@@ -138,15 +92,31 @@ for(let i = 0; i < characterNavEls.length; i++){
         for(let i = 0; i < characterIntro.length; i++){
             characterIntro[i].classList.remove('active');
         }
-        // characterBgImgAll[i].style.transition = '1s';
-        // characterBgImgAll[i].style.opacity = '1';
+        for(let i = 0; i < imgPopupElImg.length; i++){
+            imgPopupElImg[i].setAttribute('src', imgPopupElLink[i].img[i]);
+        }
         characterBgImgAll[i].style.visibility = 'visible';
-
         characterNavEls[i].classList.add('active');
         characterBgImgAll[i].classList.add('active');
         characterIntro[i].classList.add('active');
     });
 }
+for(let i = 0; i < cutWrap.length; i++){
+    cutWrap[i].addEventListener('click', ()=>{
+        for(let i = 0; i < imgPopupEl.length; i++){
+            imgPopupEl[i].classList.add('active');
+            bigimgContainer.classList.add('active');
+        }
+    })
+    
+    bigimgContainer.addEventListener('click', ()=>{
+        bigimgContainer.classList.remove('active');
+    })
+}
+
+// let isMain = false;
+// let isCharacter = false;
+// let isGallery = false;
 
 // if(isMain){
 //     console.log(isMain);
