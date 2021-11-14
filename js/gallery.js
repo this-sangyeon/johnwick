@@ -1,10 +1,10 @@
 const posterListContainer = document.querySelector('.poster-content');
 let posterListEl = document.querySelectorAll('.poster-content > .poster-list > ul > li');
-
 const btt = document.getElementById('back-to-top');
 let range = 500;
 let scrollPos;
 let docHeight; 
+let degree = 10;
 
 posterListEl = Array.prototype.slice.call(posterListEl);
 
@@ -14,18 +14,7 @@ posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
-    // console.log(screen_center);
 
-    // for(let i = 0; i < posterListEl.length; i++){
-    //     let one_poster = posterListEl[i];
-    //     if(one_poster.offsetTop <= screen_center + range && one_poster.offsetTop >= screen_center - range){
-    //         one_poster.classList.add('active');
-    //         console.log(one_poster);
-    //     }else{
-    //         one_poster.classList.remove('active');
-    //     }
-    // }
-   
     if(value < 200){
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
@@ -86,3 +75,4 @@ btt.addEventListener('click', (e)=>{
     e.preventDefault();
     scrollToTop();
 });
+
