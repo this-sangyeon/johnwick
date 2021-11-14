@@ -17,14 +17,14 @@ let imgPopupElLink =  [
         img:['img/character/sofia/sofia1.jpg', 'img/character/sofia/sofia2.jpg', 'img/character/sofia/sofia3.jpg', 'img/character/sofia/sofia3.jpg']
     },
     {
-        img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
+        img:['img/character/winston/winston1.jpg', 'img/character/winston/winston2.jpg', 'img/character/winston/winston3.jpg', 'img/character/winston/winston2.jpg']
     },
     {
         img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
     }
 ];
 // 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
-let currentPopUpIndex = 0;
+let popUpIndex = 0;
 
 jwNavLink = Array.prototype.slice.call(jwNavLink);
 characterIntro = Array.prototype.slice.call(characterIntro);
@@ -83,6 +83,9 @@ for(let i =0; i< jwNavLink.length; i++){
 
 for(let i = 0; i < characterNavEls.length; i++){
     characterNavEls[i].addEventListener('click',()=>{
+        popUpIndex = popUpIndex + 1;
+        popUpIndex > imgPopupLangth - 1 && (popUpIndex = 0);
+        console.log(popUpIndex);
         for(let j = 0; j < characterNavEls.length; j++){
             characterNavEls[j].classList.remove('active');
         }
@@ -92,8 +95,21 @@ for(let i = 0; i < characterNavEls.length; i++){
         for(let i = 0; i < characterIntro.length; i++){
             characterIntro[i].classList.remove('active');
         }
-        for(let i = 0; i < imgPopupElImg.length; i++){
-            imgPopupElImg[i].setAttribute('src', imgPopupElLink[i].img[i]);
+        for(let i = 0; i < cutWrap.length; i++){
+            cutWrap[i].addEventListener('click', ()=>{
+                console.log('click');
+                for(let i = 0; i < imgPopupEl.length; i++){
+                    imgPopupEl[i].classList.add('active');
+                    bigimgContainer.classList.add('active');
+                    for(let i = 0; i < imgPopupEl.length; i++){
+                        imgPopupElImg[i].setAttribute('src',imgPopupElLink[popUpIndex].img[i]);
+                    }
+                }
+            })
+            bigimgContainer.addEventListener('click', ()=>{
+                imgPopupEl[i].classList.remove('active');
+                bigimgContainer.classList.remove('active');
+            })
         }
         characterBgImgAll[i].style.visibility = 'visible';
         characterNavEls[i].classList.add('active');
@@ -101,18 +117,18 @@ for(let i = 0; i < characterNavEls.length; i++){
         characterIntro[i].classList.add('active');
     });
 }
-for(let i = 0; i < cutWrap.length; i++){
-    cutWrap[i].addEventListener('click', ()=>{
-        for(let i = 0; i < imgPopupEl.length; i++){
-            imgPopupEl[i].classList.add('active');
-            bigimgContainer.classList.add('active');
-        }
-    })
+// for(let i = 0; i < cutWrap.length; i++){
+//     cutWrap[i].addEventListener('click', ()=>{
+//         for(let i = 0; i < imgPopupEl.length; i++){
+//             imgPopupEl[i].classList.add('active');
+//             bigimgContainer.classList.add('active');
+//         }
+//     })
     
-    bigimgContainer.addEventListener('click', ()=>{
-        bigimgContainer.classList.remove('active');
-    })
-}
+//     bigimgContainer.addEventListener('click', ()=>{
+//         bigimgContainer.classList.remove('active');
+//     })
+// }
 
 // let isMain = false;
 // let isCharacter = false;
