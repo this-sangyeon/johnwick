@@ -3,13 +3,46 @@ const bgSection = document.querySelector('.character-container > .bg-section');
 let characterBgImgAll = document.querySelectorAll('.character-container .bg-section .bg-imgs > .bg-imgsWrap');
 const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
+const bigimgContainer = document.querySelector('.bigimg-container > .img-popup-area');
 let characterIntro = document.querySelectorAll('.character-content > .character-intro');
-
+let cutWrap = document.querySelectorAll('.cutWrap');
+let imgPopupEl = document.querySelectorAll('.img-popup');
 let characterNavEls = document.querySelectorAll('.character-nav > ul > li > p');
-jwNavLink = Array.prototype.slice.call(jwNavLink);
+let imgPopupElLink =  [
+    {
+        img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
+    },
+    {
+        img:['img/character/sofia/sofia1.jpg', 'img/character/sofia/sofia2.jpg', 'img/character/sofia/sofia3.jpg', 'img/character/sofia/sofia3.jpg']
+    },
+    {
+        img:['./img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg']
+    },
+    {
+        img:['./img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg']
+    }
+];
+// let currentIndex = 0;
 
+jwNavLink = Array.prototype.slice.call(jwNavLink);
 characterIntro = Array.prototype.slice.call(characterIntro);
 characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
+cutWrap = Array.prototype.slice.call(cutWrap);
+imgPopupEl = Array.prototype.slice.call(imgPopupEl);
+
+
+for(let i = 0; i < cutWrap.length; i++){
+    cutWrap[i].addEventListener('click', ()=>{
+        imgPopupEl[i].classList.add('active');
+        bigimgContainer.classList.add('active');
+    })
+    bigimgContainer.addEventListener('click', ()=>{
+        bigimgContainer.classList.remove('active');
+        imgPopupEl[i].classList.remove('active');
+    })
+}
+
+
 
 // let isMain = false;
 // let isCharacter = false;
@@ -100,6 +133,7 @@ for(let i = 0; i < characterNavEls.length; i++){
         characterIntro[i].classList.add('active');
     });
 }
+
 // if(isMain){
 //     console.log(isMain);
 //     section[2].classList.remove('active');

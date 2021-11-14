@@ -92,6 +92,7 @@ chapterPrevBtn.addEventListener('click',()=>{
     currentIndex = currentIndex - 1;
     currentIndex < 0 && (currentIndex = introLength - 1);
     console.log(currentIndex);
+
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }

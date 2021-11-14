@@ -61,14 +61,14 @@ section:nth-of-type(2).active{
     width: 0vw; height: 0vw; 
     left:50%;  top: 50%;  transform: translate(-50%,-50%); 
     clip-path: circle(50% at 50% 50%);
-    opacity: 0; transition: ease-in 0.5s;
+    opacity: 0; transition: ease-in 0.7s;
     transform-origin: center;
     
 }
 .character-container .bg-section  .bg-imgs > .bg-imgsWrap.active {
     width: 100vw;height: 100vw;
     position: absolute;
-    opacity: 1; transition: ease-in 0.5s;
+    opacity: 1; transition: ease-in 0.7s;
 }
 .character-container .bg-section  .bg-imgs > .bg-imgsWrap img{
     top: 50%;  transform: translate(-50%,-50%); 
@@ -99,7 +99,7 @@ section:nth-of-type(2).active{
    left: 3%;z-index: 500; display: flex; align-items: center; cursor: pointer;
 } 
 .character-container .character-content .back-arrow span:first-of-type{
-    width: 10px;height: 10px; ; position: absolute;
+    width: 10px;height: 10px; position: absolute;
     border-left:solid 2px white;border-bottom:solid 2px white; transform: rotate(45deg);
 }
 .character-container .character-content .back-arrow span:last-of-type{
@@ -140,10 +140,7 @@ section:nth-of-type(2).active{
     font-family: 'Montserrat', sans-serif; color:#ffffff;
     font-weight: 600;font-size: 1rem; color:#ffffff; margin: 0;
 }
-/* .character-container .character-content .character-intro .character-box .still-cut .still-list .line{ 
-    width: 100%; height: 1%; background-color: white; 
-    margin: 4% 0; position: absolute;
-} */
+
 .character-container .character-content .character-intro .character-box .still-cut .still-list{
     width:90%;  display: flex; flex-direction: column; height: 50%; margin-top: 2%;
 }
@@ -188,4 +185,32 @@ section:nth-of-type(2).active{
 } */
 .still-cut .still-list ul .cutWrap figure:hover span{
     visibility: hidden;
+}
+
+.character-container .bigimg-container{
+    width: 100%; height: 100%;position:absolute ;
+    z-index: 1500;pointer-events: none;
+}
+.character-container .bigimg-container .img-popup-area{
+    width: 100%; height: 100%;position: absolute; right:0;
+    visibility: hidden; opacity: 0; transition: 0.3s ease-in; pointer-events: none;
+}
+.character-container .bigimg-container .img-popup-area.active{
+    width: 100%; height: 100%;position: absolute; right:0; pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.446);visibility: visible; opacity: 1; transition: 0.3s ease-in;
+   
+}
+.character-container .bigimg-container .img-popup-area .img-popup{
+    width: 50%;z-index: 2000;
+  position: absolute; top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden; opacity: 0; transition: 0.3s ease-in;
+}
+.character-container .bigimg-container .img-popup-area .img-popup.active{
+  position: absolute; top:50%; left:60%;
+  transform: translate(-50%, -50%);
+  visibility: visible; opacity: 1; transition: 0.3s ease-in;
+}
+.character-container .bigimg-container .img-popup-area .img-popup > img{
+    width: 100%; height: 100%; object-fit:cover;
 }
