@@ -7,6 +7,7 @@ const bigimgContainer = document.querySelector('.bigimg-container > .img-popup-a
 let characterIntro = document.querySelectorAll('.character-content > .character-intro');
 let cutWrap = document.querySelectorAll('.cutWrap');
 let imgPopupEl = document.querySelectorAll('.img-popup');
+let imgPopupElImg = document.querySelectorAll('.img-popup > img');
 let characterNavEls = document.querySelectorAll('.character-nav > ul > li > p');
 let imgPopupElLink =  [
     {
@@ -22,28 +23,41 @@ let imgPopupElLink =  [
         img:['./img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg', './img/character/johnwick/johnwick1.jpg']
     }
 ];
-// let currentIndex = 0;
+// 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
+let currentPopUpIndex = 0;
 
 jwNavLink = Array.prototype.slice.call(jwNavLink);
 characterIntro = Array.prototype.slice.call(characterIntro);
 characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
 cutWrap = Array.prototype.slice.call(cutWrap);
 imgPopupEl = Array.prototype.slice.call(imgPopupEl);
-
+imgPopupElImg =Array.prototype.slice.call(imgPopupElImg);
+let imgPopupLangth = imgPopupEl.length;
 
 for(let i = 0; i < cutWrap.length; i++){
-    cutWrap[i].addEventListener('click', ()=>{
-        imgPopupEl[i].classList.add('active');
-        bigimgContainer.classList.add('active');
+    cutWrap[i].addEventListener('click', (e)=>{
+        currentPopUpIndex = currentPopUpIndex + 1;
+        currentPopUpIndex > imgPopupLangth - 1 && (currentPopUpIndex = 0);
+        // console.log(currentPopUpIndex);
+       
+            imgPopupEl[i].classList.add('active');
+            bigimgContainer.classList.add('active');
+            stillChangeCut();
     })
     bigimgContainer.addEventListener('click', ()=>{
-        bigimgContainer.classList.remove('active');
         imgPopupEl[i].classList.remove('active');
+        bigimgContainer.classList.remove('active');
+           
+        
     })
 }
 
 
-
+function stillChangeCut(){
+    for(let i = 0; i < cutWrap.length;i++){
+        imgPopupElImg[i].setAttribute('src', imgPopupElLink[currentPopUpIndex].img[i]);
+    }
+}
 // let isMain = false;
 // let isCharacter = false;
 // let isGallery = false;
