@@ -101,7 +101,7 @@ for(let i = 0; i < characterNavEls.length; i++){
                 for(let i = 0; i < imgPopupEl.length; i++){
                     imgPopupEl[i].classList.add('active');
                     bigimgContainer.classList.add('active');
-                    for(let i = 0; i < imgPopupEl.length; i++){
+                    for(let i = 0; i < imgPopupElImg.length; i++){
                         imgPopupElImg[i].setAttribute('src',imgPopupElLink[popUpIndex].img[i]);
                     }
                 }
