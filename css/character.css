@@ -203,12 +203,13 @@ section:nth-of-type(2).active{
 .character-container .bigimg-container .img-popup-area .img-popup{
     width: 50%;z-index: 2000;
   position: absolute; top:50%; left:50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden; opacity: 0; transition: 0.3s ease-in;
+  transform: translate(-50%, -50%); width: 50%;
+  display: none;
+ opacity: 0; transition: 0.3s ease-in;
 }
 .character-container .bigimg-container .img-popup-area .img-popup.active{
-  visibility: visible; opacity: 1; transition: 0.3s ease-in;
+  visibility: visible; opacity: 1; transition: 0.3s ease-in; display: block;
 }
 .character-container .bigimg-container .img-popup-area .img-popup > img{
-    width: 100%; height: 100%; object-fit:cover;
+    width: 100%; height: auto; object-fit:cover; 
 }
