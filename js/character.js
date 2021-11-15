@@ -9,7 +9,7 @@ let cutWrap = document.querySelectorAll('.cutWrap');
 let imgPopupEl = document.querySelectorAll('.img-popup');
 let imgPopupElImg = document.querySelectorAll('.img-popup > img');
 let characterNavEls = document.querySelectorAll('.character-nav > ul > li > p');
-let imgPopupElLink =  [
+const imgPopupElLink =  [
     {
         img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
     },
@@ -23,6 +23,16 @@ let imgPopupElLink =  [
         img:['img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg', 'img/character/johnwick/johnwick1.jpg']
     }
 ];
+
+// const PopupLinks = imgPopupElLink.filter(PopupLink => PopupLink.img);
+// const imgPopup = document.getElementById('img-popup');
+
+// imgPopup.dataset.columns // "4"
+// imgPopup.dataset.index // "1 ~ 4"
+// imgPopup.dataset.type // img
+
+
+
 // 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
 let popUpIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
@@ -97,41 +107,26 @@ for(let i = 0; i < characterNavEls.length; i++){
         for(let i = 0; i < characterIntro.length; i++){
             characterIntro[i].classList.remove('active');
         }
-        // for(let j = 0; j < imgPopupElImg.length; j++){
-        //     imgPopupElImg[j].setAttribute('src',imgPopupElLink[popUpIndex].img[j]);
-        // }
+
         for(let i = 0; i < cutWrap.length; i++){
             cutWrap[i].addEventListener('click', ()=>{
                 for(let i = 0; i < imgPopupEl.length; i++){
                     imgPopupEl[i].classList.add('active');
+                    console.log(imgPopupEl[i]);
                     bigimgContainer.classList.add('active');
                     
                 }
-                for(let j = 0; j < imgPopupElImg.length; j++){
-                    imgPopupElImg[j].setAttribute('src',imgPopupElLink[popUpIndex].img[j]);
-                }
+                // for(let j = 0; j < imgPopupElImg.length; j++){
+                //     imgPopupElImg[j].setAttribute('src',imgPopupElLink[popUpIndex].img[j]);
+                // }
                 bigimgContainer.addEventListener('click', ()=>{
                     for(let i = 0; i < imgPopupEl.length; i++){
                         imgPopupEl[i].classList.remove('active');
                         bigimgContainer.classList.remove('active');
-                    }
+                    }   
                 })
-                    // imgPopupEl[i].classList.add('active');
-                    // bigimgContainer.classList.add('active');
-                   
-            // for(let i = 0; i < imgPopupEl.length; i++){
-            //     imgPopupElImg[i].setAttribute('src',imgPopupElLink[popUpIndex].img[i]);
-            // }
-        })
-        // bigimgContainer.addEventListener('click', ()=>{
-        //     for(let i = 0; i < cutWrap.length; i++){
-        //         imgPopupEl[i].classList.remove('active');
-        //     bigimgContainer.classList.remove('active');
-        //     }
-        //     // imgPopupEl[i].classList.remove('active');
-        //     // bigimgContainer.classList.remove('active');
-        // })
-    }
+            })
+        }
         characterBgImgAll[i].style.visibility = 'visible';
         characterNavEls[i].classList.add('active');
         characterBgImgAll[i].classList.add('active');
