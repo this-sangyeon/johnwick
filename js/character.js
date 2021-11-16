@@ -109,7 +109,9 @@ for(let i =0; i< jwNavLink.length; i++){
                     console.log('click');
                     for(let i = 0; i < imgPopupEl.length; i++){
                         console.log('click');
+                        imgPopupEl[i].classList.remove('active');
                     }
+                    imgPopupEl[i].classList.add('active');
                 })
                 
             }
