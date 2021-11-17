@@ -1,20 +1,49 @@
 const posterListContainer = document.querySelector('.poster-content');
 let posterListEl = document.querySelectorAll('.poster-content > .poster-list > ul > li');
+const bigPorsterList = document.querySelector('.big-porster-list');
+const posterWrapCloseBtn = document.querySelector('.posterWrap-close-btn');
 const btt = document.getElementById('back-to-top');
 let range = 500;
 let scrollPos;
 let docHeight; 
 let degree = 10;
-
+const galleryPopupElLink = [
+    {
+        img: [
+            'img/gallery/posterimg/poster3-1.jpg',
+            'img/gallery/posterimg/poster3-2.jpg',
+            'img/gallery/posterimg/poster3-3.jpg',
+            'img/gallery/posterimg/poster3-4.jpg',
+            'img/gallery/posterimg/poster3-5.jpg',
+            'img/gallery/posterimg/poster3-6.jpg',
+            'img/gallery/posterimg/poster3-7.jpg',
+            'img/gallery/posterimg/poster3-8.jpg',
+            'img/gallery/posterimg/poster3-9.jpg',
+            'img/gallery/posterimg/poster3-10.jpg',
+            'img/gallery/posterimg/poster3-1.jpg',
+            'img/gallery/posterimg/poster3-2.jpg',
+        ]
+    }
+];
 posterListEl = Array.prototype.slice.call(posterListEl);
 
 docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
 
+for(let i = 0; i < posterListEl.length; i++){
+    posterListEl[i].addEventListener('click', ()=>{
+        console.log('clclclcl')
+        bigPorsterList.classList.add('active');
+        posterWrapCloseBtn.classList.add('active');
+    })
+    posterWrapCloseBtn.addEventListener('click', ()=>{
+        bigPorsterList.classList.remove('active');
+        posterWrapCloseBtn.classList.remove('active');
+    })
+}
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
-
     if(value < 200){
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
@@ -58,6 +87,8 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[10].classList.remove('active');
         posterListEl[11].classList.remove('active');
     }
+
+    
     
 })
 function scrollToTop(){
