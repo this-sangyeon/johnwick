@@ -8,11 +8,18 @@ let introLength = mainIntroArea.length;
 let currentIndex = 0;
 
 const loadLinkEl= document.querySelector('.isMovieLink');
+const loadInfoLinkEl= document.querySelector('.isInfoLink');
 let getLink = loadLinkEl.getAttribute('href');
+let _getLink = loadInfoLinkEl.getAttribute('href');
 let movielink = [
     'https://page.kakao.com/home?seriesId=50653596',
     'https://page.kakao.com/home?seriesId=50653662',
     'https://page.kakao.com/home?seriesId=53491878'
+];
+let infolink = [
+    'https://movie.naver.com/movie/bi/mi/basic.naver?code=123300',
+    'https://movie.naver.com/movie/bi/mi/basic.naver?code=143932',
+    'https://movie.naver.com/movie/bi/mi/basic.naver?code=181698'
 ];
 
 // 트레일러
@@ -102,6 +109,7 @@ chapterPrevBtn.addEventListener('click',()=>{
     mainIntroArea[currentIndex].classList.add('active');
     bgImages[currentIndex].classList.add('active');
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
+    loadInfoLinkEl.setAttribute('href', infolink[currentIndex]);
     trailerInfo();
   
 })
@@ -120,6 +128,7 @@ chapterNextBtn.addEventListener('click',()=>{
     mainIntroArea[currentIndex].classList.add('active');
     bgImages[currentIndex].classList.add('active');
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
+    loadInfoLinkEl.setAttribute('href', infolink[currentIndex]);
     trailerInfo();
 })
 
