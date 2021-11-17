@@ -47,7 +47,6 @@ const imgPopupElLink =  [
     }
 ];
 
-
 // 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
 let popUpIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
@@ -147,34 +146,6 @@ for(let i =0; i< jwNavLink.length; i++){
         }
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // characterNavEls.forEach(characterList =>{
