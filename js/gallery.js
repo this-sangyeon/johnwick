@@ -9,22 +9,18 @@ let scrollPos;
 let docHeight; 
 let degree = 10;
 const galleryPopupElLink = [
-    {
-        img: [
-            'img/gallery/posterimg/poster3-1.jpg',
-            'img/gallery/posterimg/poster3-2.jpg',
-            'img/gallery/posterimg/poster3-3.jpg',
-            'img/gallery/posterimg/poster3-4.jpg',
-            'img/gallery/posterimg/poster3-5.jpg',
-            'img/gallery/posterimg/poster3-6.jpg',
-            'img/gallery/posterimg/poster3-7.jpg',
-            'img/gallery/posterimg/poster3-8.jpg',
-            'img/gallery/posterimg/poster3-9.jpg',
-            'img/gallery/posterimg/poster3-10.jpg',
-            'img/gallery/posterimg/poster3-1.jpg',
-            'img/gallery/posterimg/poster3-2.jpg',
-        ]
-    }
+        'img/gallery/posterimg/poster3-1.jpg',
+        'img/gallery/posterimg/poster3-2.jpg',
+        'img/gallery/posterimg/poster3-3.jpg',
+        'img/gallery/posterimg/poster3-4.jpg',
+        'img/gallery/posterimg/poster3-5.jpg',
+        'img/gallery/posterimg/poster3-6.jpg',
+        'img/gallery/posterimg/poster3-7.jpg',
+        'img/gallery/posterimg/poster3-8.jpg',
+        'img/gallery/posterimg/poster3-9.jpg',
+        'img/gallery/posterimg/poster3-10.jpg',
+        'img/gallery/posterimg/poster3-1.jpg',
+        'img/gallery/posterimg/poster3-2.jpg',
 ];
 let gallerypopUpIndex = 0;
 posterListEl = Array.prototype.slice.call(posterListEl);
@@ -32,9 +28,12 @@ posterListEl = Array.prototype.slice.call(posterListEl);
 docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
 
 for(let i = 0; i < posterListEl.length; i++){
-    posterListEl[i].addEventListener('click', ()=>{
-        console.log('clclclcl')
-        BigImgPosterg.setAttribute('src', galleryPopupElLink[currentIndex].img[i]);
+    posterListEl[i].addEventListener('click', (e)=>{
+        let targetEl = e.currentTarget;
+        gallerypopUpIndex = posterListEl.indexOf(targetEl);
+        console.log('clclclcl');
+        console.log('gallerypopUpIndex', gallerypopUpIndex);
+        BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
         bigPorsterList.classList.add('active');
         posterWrapCloseBtn.classList.add('active');
 
