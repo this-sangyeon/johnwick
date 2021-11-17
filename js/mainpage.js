@@ -118,7 +118,7 @@ chapterNextBtn.addEventListener('click',()=>{
     currentIndex = currentIndex + 1;
     currentIndex > introLength - 1 && (currentIndex = 0);
     console.log(currentIndex);
-    // console.log(loadLinkEl);
+    console.log(_getLink);
     for(let i = 0; i < mainIntroArea.length; i++){
         mainIntroArea[i].classList.remove('active');
     }
