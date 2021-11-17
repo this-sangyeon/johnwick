@@ -2,6 +2,7 @@ const posterListContainer = document.querySelector('.poster-content');
 let posterListEl = document.querySelectorAll('.poster-content > .poster-list > ul > li');
 const bigPorsterList = document.querySelector('.big-porster-list');
 const posterWrapCloseBtn = document.querySelector('.posterWrap-close-btn');
+const BigImgPoster = document.querySelector('.posterWrap > div > figure > img')
 const btt = document.getElementById('back-to-top');
 let range = 500;
 let scrollPos;
@@ -25,6 +26,7 @@ const galleryPopupElLink = [
         ]
     }
 ];
+let gallerypopUpIndex = 0;
 posterListEl = Array.prototype.slice.call(posterListEl);
 
 docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
@@ -32,8 +34,10 @@ docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offset
 for(let i = 0; i < posterListEl.length; i++){
     posterListEl[i].addEventListener('click', ()=>{
         console.log('clclclcl')
+        BigImgPosterg.setAttribute('src', galleryPopupElLink[currentIndex].img[i]);
         bigPorsterList.classList.add('active');
         posterWrapCloseBtn.classList.add('active');
+
     })
     posterWrapCloseBtn.addEventListener('click', ()=>{
         bigPorsterList.classList.remove('active');

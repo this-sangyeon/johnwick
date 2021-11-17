@@ -105,53 +105,30 @@ for(let i =0; i< jwNavLink.length; i++){
 
                     for (let j = 0; j < characterNavEls.length; j++) {
                         characterNavEls[j].classList.remove('active');
-                  }
-                    for (let i = 0; i < characterBgImgAll.length; i++) {
-                        characterBgImgAll[i].classList.remove('active');
-                        characterIntro[i].classList.remove('active');
-                        cutWrapsList[i].classList.remove('active');
+                        characterBgImgAll[j].classList.remove('active');
+                        characterIntro[j].classList.remove('active');
+                        cutWrapsList[j].classList.remove('active');
+
                   }
                     characterNavEls[i].classList.add('active');
                     characterBgImgAll[i].classList.add('active');
                     characterIntro[i].classList.add('active');
                     cutWrapsList[i].classList.add('active');
+                    
                 });
-                
-                cutWrapImg[i].addEventListener('click', () => {
-                    console.log('click', i);
-                    imgPopupEl[i].classList.add('active');
-                    popUpBtn.classList.add('active');
-                    imgPopupElImg[i].setAttribute('src', imgPopupElLink[i].img[i]);
-                });
-
-                    // if(popUpIndex === 0){
-                    //     console.log('cccc');
-                    //     cutWrapImg[i].addEventListener('click', () => {
-                    //         console.log('click', i);
-                    //         imgPopupEl[i].classList.add('active');
-                    //         popUpBtn.classList.add('active');
-                           
-                    //     });
-                    // }
-                    // if( popUpIndex === 1){
-                    //     console.log('ccccfsd');
-                    //     cutWrapImg[i].addEventListener('click', () => {
-                    //         console.log('click', i);
-                    //         imgPopupEl[i].classList.add('active');
-                    //         popUpBtn.classList.add('active');
-                    //     });
-                    // }
-                    // if( popUpIndex === 2){
-                    //     console.log('ccccfsd');
-                    //     cutWrapImg[i].addEventListener('click', () => {
-                    //         console.log('click', i);
-                    //         imgPopupEl[i].classList.add('active');
-                    //         popUpBtn.classList.add('active'); 
-                            
-                    //     });
-                    // }
-                    imgPopupElImg[i].setAttribute('src', imgPopupElLink[popUpIndex].img[i]);
-                    console.log('imgPopupElLink', imgPopupElLink[i]);
+                for(let i = 0; i < cutWrapImg.length; i++){
+                    cutWrapImg[i].addEventListener('click',()=>{
+                        console.log('cutWrapImg.length', i % 4);
+                        for(let i = 0; i < imgPopupEl.length; i++){
+                            console.log('click!');
+                            imgPopupEl[i].classList.remove('active');
+                        }
+                        popUpBtn.classList.add('active');
+                        imgPopupEl[i % 4].classList.add('active');
+                        console.log('imgPopupElLink', imgPopupElLink);
+                        imgPopupElImg[i % 4].setAttribute('src', imgPopupElLink[popUpIndex].img[i%4]);
+                    })
+                }
                     popUpBtn.addEventListener('click', ()=>{
                         imgPopupEl[i].classList.remove('active');
                         popUpBtn.classList.remove('active');
