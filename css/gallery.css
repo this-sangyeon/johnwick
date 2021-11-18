@@ -30,10 +30,10 @@ section:nth-of-type(3){
 .gallery-container .poster-area .Induction-text{
     position: absolute; z-index: 1000; text-align: center;
     width:auto; height: 10%;  text-transform: uppercase;
-    top:-5%; visibility: hidden; opacity: 0; transition: .3s ease-in-out;
+    top:-5%;right:5%; visibility: hidden; opacity: 0; transition: .3s ease-in-out;
 }
 .gallery-container .poster-area .Induction-text.active{
-    width:auto; height: 10%; top: 5%; right:5%; 
+    width:auto; height: 10%; top: 5%; right:5%; position: absolute;
     visibility: visible; opacity: 1; transition: .3s ease-in-out;
 }
 .gallery-container .poster-area .Induction-text h1{

@@ -56,11 +56,16 @@ posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
-    if(value >= 100 && value < 200){
+
+    if(posterListContainer.scrollTop === 0){
         InductionText.classList.add('active');
+        // InductionText.classList.add('active');
     }
-    if(value < 300){
+    if(value >= 100 && value < 200){
         InductionText.classList.remove('active');
+        // InductionText.classList.add('active');
+    }
+    if(value < 200){
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
         posterListEl[5].classList.remove('active');
