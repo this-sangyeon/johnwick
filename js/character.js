@@ -17,8 +17,8 @@ const imgPopupElLink =  [
         img: [
             'img/character/johnwick/johnwick1.jpg',
             'img/character/johnwick/johnwick2.jpg',
-            'img/character/sofia/sofia3.jpg',
-            'img/character/sofia/sofia3.jpg',
+            'img/character/johnwick/johnwick3.jpg',
+            'img/character/johnwick/johnwick4.jpg'
         ]
     },
     {

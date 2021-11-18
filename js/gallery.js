@@ -57,7 +57,7 @@ posterListContainer.addEventListener('scroll',()=>{
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
 
-    if(posterListContainer.scrollTop === 0){
+    if(value === 0){
         InductionText.classList.add('active');
         // InductionText.classList.add('active');
     }
