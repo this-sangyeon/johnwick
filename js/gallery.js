@@ -9,18 +9,18 @@ let scrollPos;
 let docHeight; 
 let degree = 10;
 const galleryPopupElLink = [
+        'img/gallery/posterimg/poster1-1.jpg',
+        'img/gallery/posterimg/poster1-2.jpg',
+        'img/gallery/posterimg/poster1-3.jpg',
+        'img/gallery/posterimg/poster1-4.jpg',
+        'img/gallery/posterimg/poster2-1.jpg',
+        'img/gallery/posterimg/poster2-2.jpg',
+        'img/gallery/posterimg/poster2-3.jpg',
+        'img/gallery/posterimg/poster2-5.jpg',
         'img/gallery/posterimg/poster3-1.jpg',
         'img/gallery/posterimg/poster3-2.jpg',
         'img/gallery/posterimg/poster3-3.jpg',
         'img/gallery/posterimg/poster3-4.jpg',
-        'img/gallery/posterimg/poster3-5.jpg',
-        'img/gallery/posterimg/poster3-6.jpg',
-        'img/gallery/posterimg/poster3-7.jpg',
-        'img/gallery/posterimg/poster3-8.jpg',
-        'img/gallery/posterimg/poster3-9.jpg',
-        'img/gallery/posterimg/poster3-10.jpg',
-        'img/gallery/posterimg/poster3-1.jpg',
-        'img/gallery/posterimg/poster3-2.jpg',
 ];
 let gallerypopUpIndex = 0;
 posterListEl = Array.prototype.slice.call(posterListEl);

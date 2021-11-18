@@ -156,11 +156,11 @@ section:nth-of-type(3){
 }
 
 .gallery-container .poster-area .poster-content .poster-list .big-porster-list{
-        width: 100%; height: 100%; position:fixed; z-index: 1700; background-color: rgba(0, 0, 0, 0.405);
+        width: 100%; height: 100%; position:fixed; z-index: 1700; 
         visibility: hidden; opacity: 0;
 }
 .gallery-container .poster-area .poster-content .poster-list .big-porster-list.active{
-    width: 100%; height: 100%; position:fixed; z-index: 1700; background-color: rgba(0, 0, 0, 0.405);
+    width: 100%; height: 100%; position:fixed; z-index: 1700; background-color: rgba(0, 0, 0, 0.912);
     visibility: visible; opacity: 1;
 }
 .gallery-container .poster-area .poster-content .poster-list .big-porster-list .posterWrap{
