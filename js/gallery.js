@@ -4,6 +4,7 @@ const bigPorsterList = document.querySelector('.big-porster-list');
 const posterWrapCloseBtn = document.querySelector('.posterWrap-close-btn');
 const BigImgPoster = document.querySelector('.posterWrap > div > figure > img')
 const btt = document.getElementById('back-to-top');
+const InductionText = document.querySelector('.Induction-text');
 let range = 500;
 let scrollPos;
 let docHeight; 
@@ -21,6 +22,12 @@ const galleryPopupElLink = [
         'img/gallery/posterimg/poster3-2.jpg',
         'img/gallery/posterimg/poster3-3.jpg',
         'img/gallery/posterimg/poster3-4.jpg',
+        'img/gallery/posterimg/poster3-5.jpg',
+        'img/gallery/posterimg/poster3-6.jpg',
+        'img/gallery/posterimg/poster3-7.jpg',
+        'img/gallery/posterimg/poster3-8.jpg',
+        'img/gallery/posterimg/poster3-9.jpg',
+        'img/gallery/posterimg/poster3-10.jpg'
 ];
 let gallerypopUpIndex = 0;
 posterListEl = Array.prototype.slice.call(posterListEl);
@@ -43,11 +50,17 @@ for(let i = 0; i < posterListEl.length; i++){
         posterWrapCloseBtn.classList.remove('active');
     })
 }
+
+
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
-    if(value < 200){
+    if(value >= 100 && value < 200){
+        InductionText.classList.add('active');
+    }
+    if(value < 300){
+        InductionText.classList.remove('active');
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
         posterListEl[5].classList.remove('active');
@@ -68,30 +81,59 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[8].classList.remove('active');
 
     }
-    if(value >= 1400 && screen_center){
+    if(value >= 1200 && screen_center){
         posterListEl[3].classList.remove('active');
         posterListEl[4].classList.remove('active');
         posterListEl[5].classList.remove('active');
         posterListEl[6].classList.add('active');
         posterListEl[7].classList.add('active');
         posterListEl[8].classList.add('active');
+        posterListEl[9].classList.remove('active');
+        posterListEl[10].classList.remove('active');
+        posterListEl[11].classList.remove('active');
 
     }
-    if(value >= 2400  && screen_center){
+    if(value >= 2000 && screen_center){
         posterListEl[6].classList.remove('active');
         posterListEl[7].classList.remove('active');
         posterListEl[8].classList.remove('active');
         posterListEl[9].classList.add('active');
         posterListEl[10].classList.add('active');
         posterListEl[11].classList.add('active');
+        posterListEl[12].classList.remove('active');
+        posterListEl[13].classList.remove('active');
+        posterListEl[14].classList.remove('active');
+
     }
-    if(value <= 2400  && screen_center){
+    if(value >= 2700  && screen_center){
         posterListEl[9].classList.remove('active');
         posterListEl[10].classList.remove('active');
         posterListEl[11].classList.remove('active');
+        posterListEl[12].classList.add('active');
+        posterListEl[13].classList.add('active');
+        posterListEl[14].classList.add('active');
     }
-
     
+
+    if(value >= 3300  && screen_center){
+        posterListEl[12].classList.remove('active');
+        posterListEl[13].classList.remove('active');
+        posterListEl[14].classList.remove('active');
+        posterListEl[15].classList.add('active');
+        posterListEl[16].classList.add('active');
+        posterListEl[17].classList.add('active');
+    }
+    // if(value >= 3500  && screen_center){
+    //     posterListEl[12].classList.remove('active');
+    //     posterListEl[13].classList.remove('active');
+    //     posterListEl[14].classList.remove('active');
+    // }
+
+    if(value <= 3200  && screen_center){
+        posterListEl[15].classList.remove('active');
+        posterListEl[16].classList.remove('active');
+        posterListEl[17].classList.remove('active');
+    }
     
 })
 function scrollToTop(){
