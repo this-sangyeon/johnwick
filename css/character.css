@@ -74,12 +74,25 @@ section:nth-of-type(2).active{
     pointer-events: none;
 }
 .character-container .bg-section  .bg-imgs > .bg-imgsWrap img{
-    top: 50%;  transform: translate(-30%,-50%); 
+    top: 50%; 
     left:50%; height: 100vh;
     position: absolute;
     object-fit: cover;
     pointer-events: none;
 }
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap:first-of-type img{
+    transform: translate(-30%,-50%);   
+}
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap:nth-of-type(2) img{
+    transform: translate(-40%,-50%);   
+}
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap:nth-of-type(3) img{
+    transform: translate(-40%,-50%);   
+}
+.character-container .bg-section  .bg-imgs > .bg-imgsWrap:nth-of-type(4) img{
+    transform: translate(-40%,-50%);   
+}
+
 
 .character-container .box{
     position: absolute; width: 55%;height: 100%; left: -5%; 
@@ -102,17 +115,7 @@ section:nth-of-type(2).active{
 .character-container .character-content.active{
     transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
 }
-.character-container .character-content .back-arrow{
-   width: 6%; height: 6%;  position: absolute; top:13%;
-   left: 3%;z-index: 500; display: flex; align-items: center; cursor: pointer;
-} 
-.character-container .character-content .back-arrow span:first-of-type{
-    width: 10px;height: 10px; position: absolute;
-    border-left:solid 2px white;border-bottom:solid 2px white; transform: rotate(45deg);
-}
-.character-container .character-content .back-arrow span:last-of-type{
-    width: 100%; position: absolute; height:2px; background-color: white;
-}
+
 .character-container .character-content .character-intro{
     width: 85%; height: 100%; position: absolute; 
     display: flex; justify-content: center;align-items: center;
