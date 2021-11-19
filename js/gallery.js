@@ -5,6 +5,8 @@ const posterWrapCloseBtn = document.querySelector('.posterWrap-close-btn');
 const BigImgPoster = document.querySelector('.posterWrap > div > figure > img')
 const btt = document.getElementById('back-to-top');
 const InductionText = document.querySelector('.Induction-text');
+const posterPrevBtn = document.querySelector('.posterlist-btn > button.prev');
+const posterNextBtn = document.querySelector('.posterlist-btn > button.next')
 let range = 500;
 let scrollPos;
 let docHeight; 
@@ -30,6 +32,9 @@ const galleryPopupElLink = [
         'img/gallery/posterimg/poster3-10.jpg'
 ];
 let gallerypopUpIndex = 0;
+let gallerypopUpListIndex = 0;
+let posterLength = galleryPopupElLink.length;
+console.log(posterLength);
 posterListEl = Array.prototype.slice.call(posterListEl);
 
 docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
@@ -38,18 +43,38 @@ for(let i = 0; i < posterListEl.length; i++){
     posterListEl[i].addEventListener('click', (e)=>{
         let targetEl = e.currentTarget;
         gallerypopUpIndex = posterListEl.indexOf(targetEl);
+
         console.log('clclclcl');
         console.log('gallerypopUpIndex', gallerypopUpIndex);
         BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
         bigPorsterList.classList.add('active');
         posterWrapCloseBtn.classList.add('active');
-
     })
+    // posterPrevBtn.addEventListener('click', (e)=>{
+    //     // gallerypopUpIndex =  gallerypopUpIndex -1;
+    //     console.log('ccccllclvdkflsfkslf');
+    // })
+    
     posterWrapCloseBtn.addEventListener('click', ()=>{
         bigPorsterList.classList.remove('active');
         posterWrapCloseBtn.classList.remove('active');
     })
 }
+posterPrevBtn.addEventListener('click',()=>{
+    gallerypopUpIndex = gallerypopUpIndex - 1;
+    gallerypopUpIndex < 0 && (gallerypopUpIndex = posterLength - 1);
+    console.log(gallerypopUpIndex);
+    BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
+   
+    
+})
+posterNextBtn.addEventListener('click',()=>{
+    gallerypopUpIndex = gallerypopUpIndex + 1;
+    gallerypopUpIndex > posterLength - 1 && (gallerypopUpIndex =0);
+    console.log(gallerypopUpIndex);
+    BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
+    
+})
 
 
 posterListContainer.addEventListener('scroll',()=>{
