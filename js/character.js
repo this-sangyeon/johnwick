@@ -84,10 +84,7 @@ for(let i =0; i< jwNavLink.length; i++){
             navWrap.classList.remove('active');
             characterContent.classList.remove('active');
             console.log(e.currentTarget);
-            characterIntro[0].style.visibility ="visible";
-            characterIntro[0].style.opacity = 1;
         }
-        
         if(target === 1){
             console.log(e.currentTarget);
             section[0].classList.remove('active');
