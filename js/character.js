@@ -33,15 +33,15 @@ const imgPopupElLink =  [
             'img/character/winston/winston1.jpg',
             'img/character/winston/winston2.jpg',
             'img/character/winston/winston3.jpg',
-            'img/character/winston/winston2.jpg',
+            'img/character/winston/winston4.jpg',
         ]
     },
     {
         img: [
-            'img/character/johnwick/johnwick1.jpg',
-            'img/character/johnwick/johnwick1.jpg',
-            'img/character/johnwick/johnwick1.jpg',
-            'img/character/johnwick/johnwick1.jpg',
+            'img/character/charon/Charon1.jpg',
+            'img/character/charon/Charon2.jpg',
+            'img/character/charon/Charon4.jpg',
+            'img/character/charon/Charon3.jpg',
         ]
     }
 ];
