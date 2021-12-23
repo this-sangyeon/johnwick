@@ -135,6 +135,7 @@ section:first-of-type.active {
 .main-container .bg-section .trailer-area .trailer-box{
     width: 100%; height: 100%; 
     position: relative; display: flex; flex-direction: column;
+    
 }
 
 .main-container .bg-section .trailer-area .trailer-box h3{
@@ -199,7 +200,7 @@ section:first-of-type.active {
     top:5%; display: flex; left: 20%;
 }
 .main-container .main-area .main-content .main-intro{
-    width: 100%; height: 100%; position: absolute;
+    width: 100%; position: absolute;
     top:0; display: flex; flex-direction: column;
     visibility: hidden;
     transition: ease 0.5s;
@@ -211,7 +212,7 @@ section:first-of-type.active {
    opacity: 1;
 }
 .main-container .main-area .main-content .main-intro .main-text{
-    width: 100%; height: 50%; display: flex; flex-direction: column;
+    width: 100%; height: 30%; display: flex; flex-direction: column;
 }
 .main-container .main-area .main-content .main-intro .main-text .title-img{
     width: 75%;
@@ -231,7 +232,7 @@ section:first-of-type.active {
     width: 80%;height: 30%; text-align: justify;
 }
 .main-container .main-area .main-content .main-intro .main-text .movie-Info{
-    width: 100%; height: 10%; position: absolute; top:50%;
+    width: 100%; height: 10%; margin-top:10%;
 }
 .main-container .main-area .main-content .main-intro .main-text .movie-Info ul{
     width: 70%;margin:0; padding: 0;
@@ -240,9 +241,7 @@ section:first-of-type.active {
     font-family: 'Montserrat', sans-serif; ;line-height: 1.5rem;
     font-weight: 100;font-size: 1rem; list-style: none; display: inline;margin-right:20px;
 }
-.main-container .main-area .main-content .main-intro .main-text .movie-Info ul li:first-of-type{
-    display: block; margin-bottom: 2%;
-}
+
 .main-container .main-area .main-content .main-intro .main-text .movie-Info ul li strong{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 1rem; margin-right:10px;letter-spacing: 1px;
