@@ -76,9 +76,9 @@ for(let i =0; i< jwNavLink.length; i++){
 
         if(target === 0){
            
-            section[0].classList.add('active');
-            section[1].classList.remove('active');
-            section[2].classList.remove('active');
+            // section[0].classList.add('active');
+            // section[1].classList.remove('active');
+            // section[2].classList.remove('active');
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
             navWrap.classList.remove('active');
@@ -87,9 +87,9 @@ for(let i =0; i< jwNavLink.length; i++){
         } 
         if(target === 1){
             console.log(e.currentTarget);
-            section[0].classList.remove('active');
-            section[1].classList.add('active');
-            section[2].classList.remove('active');
+            // section[0].classList.remove('active');
+            // section[1].classList.add('active');
+            // section[2].classList.remove('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
                 bgSection.classList.add('active');
@@ -104,6 +104,7 @@ for(let i =0; i< jwNavLink.length; i++){
                     let targetEl = e.currentTarget;
                     popUpIndex = characterNavEls.indexOf(targetEl);
                     console.log('popUpIndex', popUpIndex);
+                    
 
                     for (let j = 0; j < characterNavEls.length; j++) {
                         characterNavEls[j].classList.remove('active');
@@ -135,19 +136,14 @@ for(let i =0; i< jwNavLink.length; i++){
                     popUpBtn.addEventListener('click', ()=>{
                         imgPopupEl[i].classList.remove('active');
                         popUpBtn.classList.remove('active');
-                       
-                        // bgPopupEl.classList.remove('active');
                 })
             }
         }
         if(target === 2){
-            section[0].classList.remove('active');
-            section[1].classList.remove('active');
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
             navWrap.classList.remove('active');
             characterContent.classList.remove('active');
-            section[2].classList.add('active');
             console.log(e.currentTarget);
         }
     })

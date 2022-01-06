@@ -64,8 +64,15 @@ for(let i =0; i< jwNavLink.length; i++){
         // e.defaultPrevented();
         for(let j = 0; j < jwNavLink.length; j++){
             jwNavLink[j].classList.remove('active');
+          
+        }
+        for(let i = 0; i < jwNavLink.length; i++){
+            section[i].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
+        section[i].classList.add('active');
+
+        // jwNavLink[0]
     })
 }
 // 트레일러
