@@ -2,15 +2,52 @@ let jwNavLink = document.querySelectorAll('.jw-nav ul > li > a');
 let section = document.querySelectorAll('section');
 const chapterPrevBtn = document.querySelector('.chapter-arrow > .prev');
 const chapterNextBtn = document.querySelector('.chapter-arrow > .next')
-let bgImages = document.querySelectorAll('.main-container > .bg-section > .bg-img');
-let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
-let introLength = mainIntroArea.length;
-let currentIndex = 0;
+const bgImages = document.querySelector('.main-container > .bg-section > .bg-img > img');
+
+// let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
+const mainIntroArea = document.querySelector('.main-content > .main-intro');
+const mainIntroTitle = document.querySelector('.main-content > .main-intro > .main-text > h2');
+const mainIntroStory = document.querySelector('.main-content > .main-intro > .main-text > p');
+const mainIntroRelease = document.querySelector('.main-content > .main-intro > .main-text > .movie-Info > ul > li:first-of-type');
 
 const loadLinkEl= document.querySelector('.isMovieLink');
 const loadInfoLinkEl= document.querySelector('.isInfoLink');
 let getLink = loadLinkEl.getAttribute('href');
 let _getLink = loadInfoLinkEl.getAttribute('href');
+
+// 트레일러
+const trailerLinkEls = document.querySelectorAll('.chapter-area ul li a');
+const trailerLinkImg = document.querySelectorAll('.chapter-area ul li a > img');
+const trailerLinkText = document.querySelectorAll('.chapter-area ul li a > h4');
+
+const trailerBtn = document.querySelector('.trailer-btn');
+const trailerArea = document.querySelector('.trailer-area');
+const closeBtn = document.querySelector('.close-btn');
+let chapterArea = document.querySelectorAll('.trailer-chapter');
+let infoBtn = document.querySelectorAll('.InfoBtn > a > button')
+
+let chapterInfo = [
+    {
+        title:'CHAPTER1 - JOHN WICK',
+        story:'I shouldn`t have touched him. Revenge against enemies who chose the wrong person!John Wick, a killer called a legend, retires from the world of crime by meeting his beloved woman and getting married. Happiness is also briefly delivered as a gift to his wife before she dies. Then one day, unidentified men rush into his house...',
+        release: '<strong>Release</strong>2015, January 21',
+        img: 'img/main/jw1.jpeg'
+        
+    },
+    {
+        title:'CHAPTER2 - REROAD',
+        story:'John Wick, the industry`s top legend killer, declares his retirement leaving the past behind, but heads to Rome under the rules of blood assassins with his former colleague who saved his life in the past. With his former colleague`s plan to steal the International Association of Assassins, John Wick fell into a trap, and the guns of assassins around the world were directed at him...',
+        release: '<strong>Release</strong>2017, February 22',
+        img: 'img/main/jw2-1.jpeg'
+    },
+    {
+        title:'CHAPTER3 - PARABELLUM',
+        story:'he legendary killer, “John Wick”.After being excommunicated by the International Association of Assaults for violating the rules, he faces danger without any protection and eventually visits Sophia for the final war…There’s no exit! If you want peace, prepare for war!',
+        release: '<strong>Release</strong>2019, may 17',
+        img: 'img/main/jw3-1.jpeg'
+    }
+]
+
 let movielink = [
     'https://page.kakao.com/home?seriesId=50653596',
     'https://page.kakao.com/home?seriesId=50653662',
@@ -22,10 +59,6 @@ let infolink = [
     'https://movie.naver.com/movie/bi/mi/basic.naver?code=181698'
 ];
 
-// 트레일러
-const trailerLinkEls = document.querySelectorAll('.chapter-area ul li a');
-const trailerLinkImg = document.querySelectorAll('.chapter-area ul li a > img');
-const trailerLinkText = document.querySelectorAll('.chapter-area ul li a > h4');
 let trailerLink =[
     {
         link:['https://tv.naver.com/v/275348','https://tv.naver.com/v/271753','https://tv.naver.com/v/238286'],
@@ -44,18 +77,9 @@ let trailerLink =[
      }
 ]
 
-const trailerBtn = document.querySelector('.trailer-btn');
-const trailerArea = document.querySelector('.trailer-area');
-const closeBtn = document.querySelector('.close-btn');
-let chapterArea = document.querySelectorAll('.trailer-chapter');
-// let chapterLength
-let infoBtn = document.querySelectorAll('.InfoBtn > a >button')
-
-
-
+let introLength = chapterInfo.length;
+let currentIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
-bgImages = Array.prototype.slice.call(bgImages);
-mainIntroArea = Array.prototype.slice.call(mainIntroArea);
 chapterArea = Array.prototype.slice.call(chapterArea);
 
 // 메인 네비게이션
@@ -106,17 +130,13 @@ chapterPrevBtn.addEventListener('click',()=>{
     currentIndex = currentIndex - 1;
     currentIndex < 0 && (currentIndex = introLength - 1);
     console.log(currentIndex);
-
-    for(let i = 0; i < mainIntroArea.length; i++){
-        mainIntroArea[i].classList.remove('active');
-    }
-    for(let i = 0; i < bgImages.length; i++){
-        bgImages[i].classList.remove('active');
-    }
-    mainIntroArea[currentIndex].classList.add('active');
-    bgImages[currentIndex].classList.add('active');
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
     loadInfoLinkEl.setAttribute('href', infolink[currentIndex]);
+    bgImages.setAttribute('src', chapterInfo[currentIndex].img);
+    mainIntroTitle.innerText = chapterInfo[currentIndex].title;
+    mainIntroStory.innerText = chapterInfo[currentIndex].story;
+    mainIntroRelease.innerHTML = chapterInfo[currentIndex].release;
+
     trailerInfo();
   
 })
@@ -126,16 +146,13 @@ chapterNextBtn.addEventListener('click',()=>{
     currentIndex > introLength - 1 && (currentIndex = 0);
     console.log(currentIndex);
     console.log(_getLink);
-    for(let i = 0; i < mainIntroArea.length; i++){
-        mainIntroArea[i].classList.remove('active');
-    }
-    for(let i = 0; i < bgImages.length; i++){
-        bgImages[i].classList.remove('active');
-    }
-    mainIntroArea[currentIndex].classList.add('active');
-    bgImages[currentIndex].classList.add('active');
+
     loadLinkEl.setAttribute('href', movielink[currentIndex]);
     loadInfoLinkEl.setAttribute('href', infolink[currentIndex]);
+    bgImages.setAttribute('src', chapterInfo[currentIndex].img);
+    mainIntroTitle.innerText = chapterInfo[currentIndex].title;
+    mainIntroStory.innerText = chapterInfo[currentIndex].story;
+    mainIntroRelease.innerHTML = chapterInfo[currentIndex].release;
     trailerInfo();
 })
 
