@@ -1,10 +1,3 @@
-section:nth-of-type(2){
-   z-index: 500;width: 100%; height: 100%;
-    visibility: hidden; pointer-events: none;
-}
-section:nth-of-type(2).active{
-    visibility: visible;pointer-events:auto;
- }
 .character-container{
     width: 100%; height: 100%;position: relative;
 }
@@ -15,7 +8,6 @@ section:nth-of-type(2).active{
 }
 .character-container .nav-wrap.active{
     width: 15%; height: 100%;position: absolute; right:0%;
-    /* z-index: 5000; */
     pointer-events: auto;display: block;
 }
 
@@ -118,11 +110,11 @@ section:nth-of-type(2).active{
 .character-container .character-content .character-intro{
     width: 85%; height: 100%; position: absolute; 
     display: flex; justify-content: center;align-items: center;
-    transition: 0.3s ease-in-out;opacity: 0; visibility: hidden; 
+    /* transition: 0.3s ease-in-out;opacity: 0; visibility: hidden;  */
 }
-.character-container .character-content .character-intro.active{
+/* .character-container .character-content .character-intro.active{
     transition: 0.3s ease-in-out;opacity: 1; visibility: visible; 
-}
+} */
 .character-container .character-content .character-intro .character-box{
     width: 100%; height: 70%; position: relative; 
     display: flex;flex-direction: column; padding: 2%;
