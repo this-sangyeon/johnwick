@@ -3,17 +3,26 @@ const bgSection = document.querySelector('.character-container > .bg-section');
 let characterBgImgAll = document.querySelectorAll('.character-container .bg-section .bg-imgs > .bg-imgsWrap');
 const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
-let characterIntro = document.querySelectorAll('.character-content > .character-intro');
-let cutWrapsList = document.querySelectorAll('.still-list');
-let cutWraps = document.querySelectorAll('.cutWrap');
-let cutWrapImg = document.querySelectorAll('.cutWrap > figure > img');
-const imgPopupEl = document.querySelectorAll('.img-popup-area > .img-popup');
-let imgPopupElImg = document.querySelectorAll('.img-popup > img');
+const characterIntro = document.querySelector('.character-content > .character-intro');
+const cutWrapsList = document.querySelector('.still-list');
 let characterNavEls = document.querySelectorAll('.character-nav > ul > li ');
 const popUpBtn = document.querySelector('.bigimg-container > .popup-btn');
-const imgPopupElLink =  [
+const imgPopupEl = document.querySelectorAll('.img-popup-area > .img-popup');
+let imgPopupElImg = document.querySelectorAll('.img-popup > img');
+
+const characterName = document.querySelector('.character-text > h1');
+const characterActor = document.querySelector('.character-text > p:first-of-type');
+const characterInfo= document.querySelector('.character-text > p:last-of-type');
+
+let cutWraps = document.querySelectorAll('.cutWrap');
+let cutWrapImg = document.querySelectorAll('.cutWrap > figure > img');
+
+let imgPopupElLink =  [
     {
-        img: [
+        name:'JohnWick',
+        actor:'<strong>Actor</strong> Keanu Reeves',
+        info:'Robbers invade John Wick`s house, rob John`s pathetic 1969 Ford Mustang Boss 429, and in the process, John Wick was assaulted, as well as beagle Daisy, a pet dog and only friend presented by his sick wife, dies. Angry at this, John Wick buried Daisy in the ground, vowing revenge, and chasing the criminal...',
+        cutimg: [
             'img/character/johnwick/johnwick1.jpg',
             'img/character/johnwick/johnwick2.jpg',
             'img/character/johnwick/johnwick3.jpg',
@@ -21,27 +30,36 @@ const imgPopupElLink =  [
         ]
     },
     {
-        img: [
+        name:'Sofia',
+        actor:'<strong>Actor</strong> Halle Berry',
+        info:'John, who moved to Casablanca with the help of the director, visited to ask for help, and quit his killer job and is working as the manager of Casablanca’s Continental Hotel. John shows whether he owes anything in the past or not, with her blood-stained mark. It seems that John helped protect and hide Sophia’s daughter.',
+        cutimg: [
             'img/character/sofia/sofia1.jpg',
             'img/character/sofia/sofia2.jpg',
             'img/character/sofia/sofia3.jpg',
-            'img/character/sofia/sofia4.jpg',
+            'img/character/sofia/sofia4.jpg'
         ]
     },
     {
-         img: [
+        name:'Winston',
+        actor:'<strong>Actor</strong> Ian McShane',
+        info:'The code number is 11111. A practical manager of the New York Continental Hotel and management of an underground, behind-the-scenes club,basically treats all hotel guests neutral, but offers favors to longtime regular John Wick.',
+        cutimg: [
             'img/character/winston/winston1.jpg',
             'img/character/winston/winston2.jpg',
             'img/character/winston/winston3.jpg',
-            'img/character/winston/winston4.jpg',
+            'img/character/winston/winston4.jpg'
         ]
     },
     {
-        img: [
+        name:'Charon',
+        actor:'<strong>Actor</strong> Lance Reddick',
+        info:'receptionist at the Continental Hotel. He is always on a poker face with a gentlemanly beggar. When John Wick comes to the Continental Hotel, he seems to respect John Wick in his own way, saying, "It`s an honor to serve you once again."',
+        cutimg: [
             'img/character/charon/Charon1.jpg',
             'img/character/charon/Charon2.jpg',
             'img/character/charon/Charon4.jpg',
-            'img/character/charon/Charon3.jpg',
+            'img/character/charon/Charon3.jpg'
         ]
     }
 ];
@@ -49,36 +67,23 @@ const imgPopupElLink =  [
 // 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
 let popUpIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
-mainIntroArea = Array.prototype.slice.call(mainIntroArea);
-characterIntro = Array.prototype.slice.call(characterIntro);
+imgPopupElImg = Array.prototype.slice.call(imgPopupElImg);
 characterBgImgAll = Array.prototype.slice.call(characterBgImgAll);
-cutWrapsList = Array.prototype.slice.call(cutWrapsList);
-
 characterNavEls = Array.prototype.slice.call(characterNavEls);
 cutWraps = Array.prototype.slice.call(cutWraps);
-
 cutWrapImg = Array.prototype.slice.call(cutWrapImg);
-// imgPopupEl = Array.prototype.slice.call(imgPopupEl);
-imgPopupElImg =Array.prototype.slice.call(imgPopupElImg);
 console.log(imgPopupEl);
 
 
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',(e)=>{
         let el = e.currentTarget, target = jwNavLink.indexOf(el);
-        
-        // console.log(target);
-        // e.defaultPrevented();
         for(let j = 0; j < jwNavLink.length; j++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
 
         if(target === 0){
-           
-            // section[0].classList.add('active');
-            // section[1].classList.remove('active');
-            // section[2].classList.remove('active');
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
             navWrap.classList.remove('active');
@@ -87,9 +92,6 @@ for(let i =0; i< jwNavLink.length; i++){
         } 
         if(target === 1){
             console.log(e.currentTarget);
-            // section[0].classList.remove('active');
-            // section[1].classList.add('active');
-            // section[2].classList.remove('active');
             setTimeout(()=>{
                 clipBox.classList.add('active');
                 bgSection.classList.add('active');
@@ -109,30 +111,27 @@ for(let i =0; i< jwNavLink.length; i++){
                     for (let j = 0; j < characterNavEls.length; j++) {
                         characterNavEls[j].classList.remove('active');
                         characterBgImgAll[j].classList.remove('active');
-                        characterIntro[j].classList.remove('active');
-                        cutWrapsList[j].classList.remove('active');
-
                   }
                     characterNavEls[i].classList.add('active');
                     characterBgImgAll[i].classList.add('active');
-                    characterIntro[i].classList.add('active');
-                    cutWrapsList[i].classList.add('active');
-                    
+                    characterName.innerText = imgPopupElLink[popUpIndex].name;
+                    characterActor.innerHTML = imgPopupElLink[popUpIndex].actor;
+                    characterInfo.innerHTML = imgPopupElLink[popUpIndex].info;
+                   
+                    for(let i = 0; i < imgPopupElLink.length; i++ ){
+                        cutWrapImg[i].setAttribute('src',imgPopupElLink[popUpIndex].cutimg[i]);
+                    }
                 });
-                for(let i = 0; i < cutWrapImg.length; i++){
-                    cutWrapImg[i].addEventListener('click',()=>{
-                        console.log('cutWrapImg.length', i % 4);
-                        for(let i = 0; i < imgPopupEl.length; i++){
-                            console.log('click!');
-                            imgPopupEl[i].classList.remove('active');
-                        }
-                      
-                        popUpBtn.classList.add('active');
-                        imgPopupEl[i % 4].classList.add('active');
-                        console.log('imgPopupElLink', imgPopupElLink);
-                        imgPopupElImg[i % 4].setAttribute('src', imgPopupElLink[popUpIndex].img[i%4]);
-                    })
-                }
+                
+                cutWrapImg[i].addEventListener('click',()=>{
+                    for(let i = 0; i < imgPopupElLink.length; i++){
+                        imgPopupEl[i].classList.remove('active');
+                    }
+                    imgPopupElImg[i].setAttribute('src', imgPopupElLink[popUpIndex].cutimg[i]);
+                    imgPopupEl[i].classList.add('active');
+                    popUpBtn.classList.add('active');
+                   
+                })
                     popUpBtn.addEventListener('click', ()=>{
                         imgPopupEl[i].classList.remove('active');
                         popUpBtn.classList.remove('active');
@@ -148,5 +147,11 @@ for(let i =0; i< jwNavLink.length; i++){
         }
     })
 }
+
+
+
+
+
+
 
 
