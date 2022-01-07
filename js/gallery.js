@@ -36,25 +36,17 @@ let gallerypopUpListIndex = 0;
 let posterLength = galleryPopupElLink.length;
 console.log(posterLength);
 posterListEl = Array.prototype.slice.call(posterListEl);
-
 docHeight = Math.max(posterListContainer.scrollHeight,posterListContainer.offsetHeight);
 
 for(let i = 0; i < posterListEl.length; i++){
     posterListEl[i].addEventListener('click', (e)=>{
         let targetEl = e.currentTarget;
         gallerypopUpIndex = posterListEl.indexOf(targetEl);
-
-        console.log('clclclcl');
         console.log('gallerypopUpIndex', gallerypopUpIndex);
         BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
         bigPorsterList.classList.add('active');
         posterWrapCloseBtn.classList.add('active');
     })
-    // posterPrevBtn.addEventListener('click', (e)=>{
-    //     // gallerypopUpIndex =  gallerypopUpIndex -1;
-    //     console.log('ccccllclvdkflsfkslf');
-    // })
-    
     posterWrapCloseBtn.addEventListener('click', ()=>{
         bigPorsterList.classList.remove('active');
         posterWrapCloseBtn.classList.remove('active');
@@ -65,30 +57,22 @@ posterPrevBtn.addEventListener('click',()=>{
     gallerypopUpIndex < 0 && (gallerypopUpIndex = posterLength - 1);
     console.log(gallerypopUpIndex);
     BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
-   
-    
 })
 posterNextBtn.addEventListener('click',()=>{
     gallerypopUpIndex = gallerypopUpIndex + 1;
     gallerypopUpIndex > posterLength - 1 && (gallerypopUpIndex =0);
     console.log(gallerypopUpIndex);
-    BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex]);
-    
+    BigImgPoster.setAttribute('src', galleryPopupElLink[gallerypopUpIndex])
 })
-
-
 posterListContainer.addEventListener('scroll',()=>{
     value = posterListContainer.scrollTop;
     console.log(value);
     let screen_center= document.documentElement.scrollTop + window.innerHeight/2;
-
     if(value === 0){
         InductionText.classList.add('active');
-        // InductionText.classList.add('active');
     }
     if(value >= 100 && value < 200){
         InductionText.classList.remove('active');
-        // InductionText.classList.add('active');
     }
     if(value < 200){
         posterListEl[3].classList.remove('active');
@@ -97,7 +81,6 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[0].classList.add('active');
         posterListEl[1].classList.add('active');
         posterListEl[2].classList.add('active');
-    
     }
     if(value >= 600 && screen_center ){
         posterListEl[0].classList.remove('active');
@@ -109,7 +92,6 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[6].classList.remove('active');
         posterListEl[7].classList.remove('active');
         posterListEl[8].classList.remove('active');
-
     }
     if(value >= 1200 && screen_center){
         posterListEl[3].classList.remove('active');
@@ -121,7 +103,6 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[9].classList.remove('active');
         posterListEl[10].classList.remove('active');
         posterListEl[11].classList.remove('active');
-
     }
     if(value >= 2000 && screen_center){
         posterListEl[6].classList.remove('active');
@@ -133,7 +114,6 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[12].classList.remove('active');
         posterListEl[13].classList.remove('active');
         posterListEl[14].classList.remove('active');
-
     }
     if(value >= 2700  && screen_center){
         posterListEl[9].classList.remove('active');
@@ -143,8 +123,6 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[13].classList.add('active');
         posterListEl[14].classList.add('active');
     }
-    
-
     if(value >= 3300  && screen_center){
         posterListEl[12].classList.remove('active');
         posterListEl[13].classList.remove('active');
@@ -153,18 +131,11 @@ posterListContainer.addEventListener('scroll',()=>{
         posterListEl[16].classList.add('active');
         posterListEl[17].classList.add('active');
     }
-    // if(value >= 3500  && screen_center){
-    //     posterListEl[12].classList.remove('active');
-    //     posterListEl[13].classList.remove('active');
-    //     posterListEl[14].classList.remove('active');
-    // }
-
     if(value <= 3200  && screen_center){
         posterListEl[15].classList.remove('active');
         posterListEl[16].classList.remove('active');
         posterListEl[17].classList.remove('active');
     }
-    
 })
 function scrollToTop(){
     var scrollInterval = setInterval(()=>{
@@ -176,7 +147,6 @@ function scrollToTop(){
         }
     }, 15);
 }
-
 btt.addEventListener('click', (e)=>{
     e.preventDefault();
     scrollToTop();
