@@ -14,7 +14,7 @@
     .movie-Info{width: 100%;}
     .movie-Info ul{width: 100%;margin:0; padding: 0;}
     .movie-Info ul li{display:block;}
-    .main-content .InfoBtn{bottom:3%}
+    .main-content .InfoBtn{bottom:1%}
     .main-content .InfoBtn  a button{width: 45%; height: 90%;}
 
     /* character */

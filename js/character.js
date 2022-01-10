@@ -64,7 +64,7 @@ let imgPopupElLink =  [
     }
 ];
 
-// 해야할 것: 캐릭터 내의 네비게이션 눌렀다가 홈이나 갤러리 눌렀을 때 네비게이션 비활성화
+
 let popUpIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
 imgPopupElImg = Array.prototype.slice.call(imgPopupElImg);
@@ -73,6 +73,10 @@ characterNavEls = Array.prototype.slice.call(characterNavEls);
 cutWraps = Array.prototype.slice.call(cutWraps);
 cutWrapImg = Array.prototype.slice.call(cutWrapImg);
 console.log(imgPopupEl);
+
+let isChapter = false;
+let isCharacter= false;
+let isStillCut = false;
 
 
 for(let i =0; i< jwNavLink.length; i++){
@@ -89,6 +93,25 @@ for(let i =0; i< jwNavLink.length; i++){
             navWrap.classList.remove('active');
             characterContent.classList.remove('active');
             console.log(e.currentTarget);
+            if(isChapter === false){
+                let chapterOne = 0;
+                loadLinkEl.setAttribute('href', movielink[chapterOne]);
+                loadInfoLinkEl.setAttribute('href', infolink[chapterOne]);
+                bgImages.setAttribute('src', chapterInfo[chapterOne].img);
+                mainIntroTitle.innerText = chapterInfo[chapterOne].title;
+                mainIntroStory.innerText = chapterInfo[chapterOne].story;
+                mainIntroRelease.innerHTML = chapterInfo[chapterOne].release;
+                
+                trailerInfo();
+
+                function trailerInfo(){
+                    for(let i = 0; i < trailerLinkEls.length; i++){
+                        trailerLinkEls[i].setAttribute('href',trailerLink[chapterOne].link[i]);
+                        trailerLinkImg[i].setAttribute('src',trailerLink[chapterOne].img[i]);
+                        trailerLinkText[i].innerText = trailerLink[chapterOne].text[i];
+                    }
+                }
+            }
         } 
         if(target === 1){
             console.log(e.currentTarget);
@@ -136,6 +159,29 @@ for(let i =0; i< jwNavLink.length; i++){
                         imgPopupEl[i].classList.remove('active');
                         popUpBtn.classList.remove('active');
                 })
+
+               
+                if(isCharacter === false){
+                    let CharacterOne = 0;
+                    characterName.innerText = imgPopupElLink[CharacterOne].name;
+                    characterActor.innerHTML = imgPopupElLink[CharacterOne].actor;
+                    characterInfo.innerHTML = imgPopupElLink[CharacterOne].info;
+                 
+                    for(let i = 0; i < imgPopupElLink.length; i++ ){
+                        cutWrapImg[i].setAttribute('src',imgPopupElLink[CharacterOne].cutimg[i]);
+                        characterBgImgAll[i].classList.remove('active');
+                        characterNavEls[i].classList.remove('active');
+                    }
+                    characterBgImgAll[CharacterOne].classList.add('active');
+                    characterNavEls[CharacterOne].classList.add('active');
+                    // if(isCharacter === false){
+
+                    //     cutWrapImg[i].addEventListener('click',()=>{
+                    //         imgPopupElImg[i].setAttribute('src', imgPopupElLink[CharacterOne].cutimg[i]);
+                    //     })
+                    // }
+                }
+                
             }
         }
         if(target === 2){
