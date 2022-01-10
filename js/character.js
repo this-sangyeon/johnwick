@@ -76,7 +76,7 @@ console.log(imgPopupEl);
 
 let isChapter = false;
 let isCharacter= false;
-let isStillCut = false;
+// let isStillCut = false;
 
 
 for(let i =0; i< jwNavLink.length; i++){
@@ -123,6 +123,8 @@ for(let i =0; i< jwNavLink.length; i++){
             setTimeout(()=>{
                 characterContent.classList.add('active');
             },300)
+
+            
             // 캐릭터 리스트 눌렀을 때
             for (let i = 0; i < characterNavEls.length; i++) {
                 characterNavEls[i].addEventListener('click', (e) => {
@@ -160,26 +162,21 @@ for(let i =0; i< jwNavLink.length; i++){
                         popUpBtn.classList.remove('active');
                 })
 
-               
+
+                
                 if(isCharacter === false){
-                    let CharacterOne = 0;
-                    characterName.innerText = imgPopupElLink[CharacterOne].name;
-                    characterActor.innerHTML = imgPopupElLink[CharacterOne].actor;
-                    characterInfo.innerHTML = imgPopupElLink[CharacterOne].info;
+                    popUpIndex = 0;
+                    characterName.innerText = imgPopupElLink[popUpIndex].name;
+                    characterActor.innerHTML = imgPopupElLink[popUpIndex].actor;
+                    characterInfo.innerHTML = imgPopupElLink[popUpIndex].info;
                  
                     for(let i = 0; i < imgPopupElLink.length; i++ ){
-                        cutWrapImg[i].setAttribute('src',imgPopupElLink[CharacterOne].cutimg[i]);
+                        cutWrapImg[i].setAttribute('src',imgPopupElLink[popUpIndex].cutimg[i]);
                         characterBgImgAll[i].classList.remove('active');
                         characterNavEls[i].classList.remove('active');
                     }
-                    characterBgImgAll[CharacterOne].classList.add('active');
-                    characterNavEls[CharacterOne].classList.add('active');
-                    // if(isCharacter === false){
-
-                    //     cutWrapImg[i].addEventListener('click',()=>{
-                    //         imgPopupElImg[i].setAttribute('src', imgPopupElLink[CharacterOne].cutimg[i]);
-                    //     })
-                    // }
+                    characterBgImgAll[popUpIndex].classList.add('active');
+                    characterNavEls[popUpIndex].classList.add('active');
                 }
                 
             }
