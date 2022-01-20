@@ -123,7 +123,10 @@ for(let i =0; i< jwNavLink.length; i++){
             setTimeout(()=>{
                 characterContent.classList.add('active');
             },300)
-
+            trailerArea.classList.remove('active');
+            setTimeout(()=>{
+                trailerBtn.classList.remove('active');
+            },700)
             
             // 캐릭터 리스트 눌렀을 때
             for (let i = 0; i < characterNavEls.length; i++) {

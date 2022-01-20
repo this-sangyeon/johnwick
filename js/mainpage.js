@@ -62,7 +62,7 @@ let infolink = [
 let trailerLink =[
     {
         link:['https://tv.naver.com/v/275348','https://tv.naver.com/v/271753','https://tv.naver.com/v/238286'],
-        img:['img/main/jw2.jpeg','img/main/jw1.jpeg','img/main/jw3.jpeg'],
+        img:['img/main/jw1.jpeg','img/main/jw2.jpeg','img/main/jw3.jpeg'],
         text: ['Chapter1 Main preview','Chapter1 15-second preview','Chapter1 30-second preview']
      },
      {
