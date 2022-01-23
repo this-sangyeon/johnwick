@@ -191,3 +191,93 @@
     .poster-list ul > li:nth-child(5){top:12%;left:50%; transition:0.5s ease-in-out; opacity: 0;transform: translateX(-50%); transition:0.5s ease-in-out;}
     .poster-list ul > li:nth-child(5).active{top:10%;left:50%; transition:0.5s ease-in-out; opacity: 1;transform: translateX(-50%);opacity: 1; transition:0.5s ease-in-out;}
 }
+
+@media screen and (max-width: 600px){
+    header .jw-nav{
+        display: none;
+     }
+     header .logo > a > img {
+        width: 50px;z-index: 1500;
+    }
+    header .logo{
+        height: 100%;position: absolute; top:0;
+    }
+    header{
+        width: 100%; top:0%; display: none;
+    }
+    .ham-navigaion{
+        display: block; width: 100%; height: 100%;  position:absolute; top:0; right: 0;
+    }
+    .ham-btn-container{
+        width: 100%; height: 100%;  position: relative;z-index: 9900;
+    }
+    .johnwick-ham-btn{
+        width: 50px; height: 50px; position: absolute; right:0; z-index: 9900;
+
+    }
+    .johnwick-ham-btn button{
+        width: 100%; height: 100%; position: relative; outline: 0; border: 0; background: 0;
+        
+    }
+    .btn-line{
+        width: 50%;height: 30%; position: absolute;top:50%; left:50%; transform: translate(-50%,-50%);
+        display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .btn-line span{
+        width: 100%; height: 2px; background: rgb(255, 255, 255);  
+      
+    }
+    .buger-container{
+        width: 100%; height: 100vh; position: absolute;  top:0;
+        /* opacity: 0;transition: 0.5s ease-in-out; visibility: hidden; */
+        opacity: 1;transition: 0.5s ease-in-out;visibility: visible;
+    }
+    /* .buger-container.active{
+        width: 100%; height: 100vh;  opacity: 1;transition: 0.5s ease-in-out;visibility: visible;
+    } */
+    .buger-cover{
+        width: 100%; height: 100%;  background: linear-gradient( -45deg, #6c2adf, #4F0BC1, #2f33ff); position: relative; 
+        /* opacity: 0;transition: 0.5s ease-in-out;visibility: hidden; */
+        opacity: 1;  transition: 0.5s ease-in-out;visibility: visible;
+    }
+    /* .buger-cover.active{
+        width: 100%; height: 100%;  opacity: 1;  transition: 0.5s ease-in-out;visibility: visible;
+    } */
+    .buger-johnwick-list {
+        position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+    }
+    .buger-johnwick-list ul{
+       margin: 0; padding: 0;
+    }
+    .buger-johnwick-list li{
+        margin-bottom: 20%; text-align: center; list-style: none;
+    }
+    .buger-johnwick-list li a{
+        font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; text-transform: uppercase;
+        text-decoration: none; color:white;text-align: center; cursor: pointer;
+    }
+    
+    .trailer-btn{
+        width: 50px; height: 10%; position: absolute; right:10%; cursor: pointer; visibility: visible;transition: ease-in-out 0.3s;opacity: 1;
+        z-index: 500;  top:50%; transform: translateY(-50%); display: flex; flex-direction: row; justify-content: center; align-items: center;
+    }
+
+    .main-container .bg-section .trailer-area{right:-100%;  width: 60%;}
+    .main-container .bg-section .trailer-area .trailer-box h3{ position: absolute; top:15%; margin: 0; left: 50%; transform: translateX(-55%);}
+    .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a > h4{ font-size: 0.9rem;}
+    
+    .main-area{width: 100%; display: block;   margin-left: 0%; background:rgb(49, 77, 21);}
+    .main-intro {position: absolute; top:55%;}
+    .main-text .title-img { width: 100%;}
+    .main-intro .main-text h2{
+        font-weight: 300;font-size: 1rem; color:#ffffff; letter-spacing: 1px;
+    }
+    .main-text > p{width: 100%;}
+    .movie-Info{width: 100%;}
+    .movie-Info ul{width: 100%;margin:0; padding: 0;}
+    .movie-Info ul li{display:block;}
+    .main-content .InfoBtn{bottom:1%}
+    .main-content .InfoBtn  a button{width: 45%; height: 90%;}
+}
+
+

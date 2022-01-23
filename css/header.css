@@ -8,6 +8,9 @@ header{
     display: flex; flex-direction: row; 
     align-items: center; 
 }
+.ham-navigaion{
+    display: none;
+}
 header .logo{
     height: 100%; margin-left:5%; 
 }
