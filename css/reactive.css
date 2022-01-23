@@ -10,7 +10,7 @@
     .main-area{width: 60%;}
     .main-intro {position: absolute; top:45%;}
     .main-text .title-img { width: 100%;}
-    .main-text p{width: 100%;}
+    .main-text p{width: 100%; }
     .movie-Info{width: 100%;}
     .movie-Info ul{width: 100%;margin:0; padding: 0;}
     .movie-Info ul li{display:block;}
@@ -174,7 +174,7 @@
     }
     
 }
-@media screen and (max-height: 1080px){
+/* @media screen and (max-height: 1080px){
     .main-container .bg-section .trailer-area{right:-30%;  width: 30%;}
     .main-container .bg-section .trailer-area .trailer-box h3{ position: absolute; top:5%;}
     .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a > h4{font-size: 0.9rem;}
@@ -190,9 +190,9 @@
     .poster-list ul > li {width: auto; height: 600px;position: absolute; margin-top: 10%;list-style: none; cursor: pointer;}
     .poster-list ul > li:nth-child(5){top:12%;left:50%; transition:0.5s ease-in-out; opacity: 0;transform: translateX(-50%); transition:0.5s ease-in-out;}
     .poster-list ul > li:nth-child(5).active{top:10%;left:50%; transition:0.5s ease-in-out; opacity: 1;transform: translateX(-50%);opacity: 1; transition:0.5s ease-in-out;}
-}
+} */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
     header .jw-nav{
         display: none;
      }
@@ -261,23 +261,45 @@
         width: 50px; height: 10%; position: absolute; right:10%; cursor: pointer; visibility: visible;transition: ease-in-out 0.3s;opacity: 1;
         z-index: 500;  top:50%; transform: translateY(-50%); display: flex; flex-direction: row; justify-content: center; align-items: center;
     }
-
+    .main-container .bg-section .chapter-arrow{
+        position: absolute; z-index: 100;
+     display: flex; flex-direction: column; bottom:10%; right:5%; 
+  }
+  .main-container .bg-section .chapter-arrow button{
+      margin-bottom: 10%;
+  }
     .main-container .bg-section .trailer-area{right:-100%;  width: 60%;}
     .main-container .bg-section .trailer-area .trailer-box h3{ position: absolute; top:15%; margin: 0; left: 50%; transform: translateX(-55%);}
     .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter ul li a > h4{ font-size: 0.9rem;}
     
-    .main-area{width: 100%; display: block;   margin-left: 0%; background:rgb(49, 77, 21);}
-    .main-intro {position: absolute; top:55%;}
-    .main-text .title-img { width: 100%;}
+    .main-area{width: 75%; display: block;   margin-left: 0%;}
+    .main-content{
+        width: 100%; height: 70%; position: relative; flex-direction: column;
+        top:50%; display: flex; left: 5%; transform: translateY(-50%);
+    }
+    .main-intro {position: absolute; top:30%;}
+    .main-text .title-img { width: 95%;}
     .main-intro .main-text h2{
         font-weight: 300;font-size: 1rem; color:#ffffff; letter-spacing: 1px;
     }
-    .main-text > p{width: 100%;}
-    .movie-Info{width: 100%;}
-    .movie-Info ul{width: 100%;margin:0; padding: 0;}
-    .movie-Info ul li{display:block;}
-    .main-content .InfoBtn{bottom:1%}
+    .main-intro  .main-text p{width: 100%; font-size: 0.8rem; }
+    .movie-Info{width: 100%; }
+    .movie-Info ul{width: 100%; margin:0; padding: 0;}
+   .movie-Info ul li{display:block; margin: 0; }
+    .main-content .InfoBtn{bottom:1%; font-size: 0.7rem;}
     .main-content .InfoBtn  a button{width: 45%; height: 90%;}
+    /* .main-content .InfoBtn{bottom: 0%; position: absolute; display:flex; font-size: 0.7rem; width: 100%;}
+    .main-content .InfoBtn  a button{width: 45%; height: 90%; padding: 5%; margin-bottom:10px; } */
+
+    footer{
+        bottom:2%; 
+    }
+    footer .footer-area{
+       left:5%;
+    }
+    footer .footer-area ul li{
+        margin-right:5%;
+    }
 }
 
 
