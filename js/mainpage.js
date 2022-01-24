@@ -171,7 +171,7 @@ function trailerInfo(){
 }
 
 
-if(matchMedia("screen and (max-width : 1024px)").matches){
+if(matchMedia("screen and (max-width : 900px)").matches){
    
     johnwickNav.classList.add('active');
     johnwickHamBtn.addEventListener('click',()=>{
@@ -194,22 +194,42 @@ if(matchMedia("screen and (max-width : 1024px)").matches){
                 bugerContainer.classList.toggle('active');
                 bugerCover.classList.toggle('active');
             },1000)
+            setTimeout(()=>{
+                clipBox.classList.add('active');
+                bgSection.classList.add('active');
+                navWrap.classList.add('active');
+            },100)
+           
+            for (let i = 0; i < characterNavEls.length; i++) {
+                characterNavEls[i].addEventListener('click', (e) => {
+                    let targetEl = e.currentTarget;
+                    popUpIndex = characterNavEls.indexOf(targetEl);
+                    console.log('popUpIndex', popUpIndex);
+                    
 
-           
-               
-                // section[1].style.display ="block";
-                // characterContainer.style.visibility="visible";
-                // characterContainer.style.opacity="1";
-                // characterContainer.style.background="black";
-                // // characterBgImgAll[i].style.display="block";
-                // navWrap.style.visibility="visible";
-                // navWrap.style.opacity="1"; 
-                // navWrap.style.background="red";
-                // navWrap.style.display="block";
-                // navWrap.style.right="0";
-           
+                    for (let j = 0; j < characterNavEls.length; j++) {
+                        characterNavEls[j].classList.remove('active');
+                        characterBgImgAll[j].classList.remove('active');
+                  }
+                    characterNavEls[i].classList.add('active');
+                    characterBgImgAll[i].classList.add('active');
+                    characterName.innerText = imgPopupElLink[popUpIndex].name;
+                    characterActor.innerHTML = imgPopupElLink[popUpIndex].actor;
+                    characterInfo.innerHTML = imgPopupElLink[popUpIndex].info;
+                
+                });
+            }
         })
     }
 
     
 }
+
+window.addEventListener('resize',()=>{
+    if(matchMedia("screen and (max-width : 900px)").matches){
+        console.log('cdfsddfsds');
+        bgSection.style.visibility= 'visible';
+        bgSection.style.opacity= '1';
+        johnwickNav.classList.add('active');
+    }
+})
