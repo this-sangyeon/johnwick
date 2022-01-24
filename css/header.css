@@ -21,7 +21,7 @@ header .logo > a > img {
     width: 80px;
 }
 header .jw-nav{
-    width: 30%; height: 100%; 
+    width: 30%; height: 100%;  display: flex;
 }
 header .jw-nav ul{
     width: 30%; padding:0;position: absolute; top: 25%;  transform: translateY(-25%);

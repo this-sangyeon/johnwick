@@ -1,9 +1,14 @@
 let jwNavLink = document.querySelectorAll('.jw-nav ul > li > a');
+const johnwickNav = document.querySelector('.jw-nav');
 let section = document.querySelectorAll('section');
 const chapterPrevBtn = document.querySelector('.chapter-arrow > .prev');
 const chapterNextBtn = document.querySelector('.chapter-arrow > .next')
 const bgImages = document.querySelector('.main-container > .bg-section > .bg-img > img');
 
+const bugerContainer = document.querySelector('.buger-container');
+const bugerCover = document.querySelector('.buger-cover');
+let bugerJohnwickList = document.querySelectorAll('.buger-johnwick-list > ul > li');
+const johnwickHamBtn = document.querySelector('.johnwick-ham-btn');
 // let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
 const mainIntroArea = document.querySelector('.main-content > .main-intro');
 const mainIntroTitle = document.querySelector('.main-content > .main-intro > .main-text > h2');
@@ -81,6 +86,7 @@ let introLength = chapterInfo.length;
 let currentIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
 chapterArea = Array.prototype.slice.call(chapterArea);
+bugerJohnwickList = Array.prototype.slice.call(bugerJohnwickList);
 
 // 메인 네비게이션
 for(let i =0; i< jwNavLink.length; i++){
@@ -162,4 +168,48 @@ function trailerInfo(){
         trailerLinkImg[i].setAttribute('src',trailerLink[currentIndex].img[i]);
         trailerLinkText[i].innerText = trailerLink[currentIndex].text[i];
     }
+}
+
+
+if(matchMedia("screen and (max-width : 1024px)").matches){
+   
+    johnwickNav.classList.add('active');
+    johnwickHamBtn.addEventListener('click',()=>{
+        console.log('click!');
+        bugerContainer.classList.toggle('active');
+        bugerCover.classList.toggle('active');
+
+    })
+
+    for(let i = 0; i < bugerJohnwickList.length; i++){
+        bugerJohnwickList[i].addEventListener('click',(e)=>{
+            let targetIndex = e.currentTarget;
+            navListIndex = bugerJohnwickList.indexOf(targetIndex);
+            for(let i = 0; i < section.length; i++){
+                section[i].classList.remove('active');
+            }
+            console.log('click');
+            section[i].classList.add('active');
+            setTimeout(()=>{
+                bugerContainer.classList.toggle('active');
+                bugerCover.classList.toggle('active');
+            },1000)
+
+           
+               
+                // section[1].style.display ="block";
+                // characterContainer.style.visibility="visible";
+                // characterContainer.style.opacity="1";
+                // characterContainer.style.background="black";
+                // // characterBgImgAll[i].style.display="block";
+                // navWrap.style.visibility="visible";
+                // navWrap.style.opacity="1"; 
+                // navWrap.style.background="red";
+                // navWrap.style.display="block";
+                // navWrap.style.right="0";
+           
+        })
+    }
+
+    
 }

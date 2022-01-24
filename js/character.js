@@ -1,5 +1,6 @@
 const clipBox = document.querySelector('.box');
 const bgSection = document.querySelector('.character-container > .bg-section');
+const characterContainer = document.querySelector('.character-container')
 let characterBgImgAll = document.querySelectorAll('.character-container .bg-section .bg-imgs > .bg-imgsWrap');
 const navWrap = document.querySelector('.nav-wrap');
 const characterContent = document.querySelector('.character-content');
