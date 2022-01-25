@@ -171,6 +171,8 @@ function trailerInfo(){
 }
 
 
+let isResponChapter = false;
+let isResCharacter = false;
 
 if(matchMedia("screen and (max-width : 900px)").matches){
    
@@ -203,6 +205,43 @@ if(matchMedia("screen and (max-width : 900px)").matches){
                 navWrap.classList.add('active');
             },100)
            
+            if(navListIndex === 0){
+                if(isResponChapter === false){
+                    let chapter = 0;
+                    loadLinkEl.setAttribute('href', movielink[chapter]);
+                    loadInfoLinkEl.setAttribute('href', infolink[chapter]);
+                    bgImages.setAttribute('src', chapterInfo[chapter].img);
+                    mainIntroTitle.innerText = chapterInfo[chapter].title;
+                    mainIntroStory.innerText = chapterInfo[chapter].story;
+                    mainIntroRelease.innerHTML = chapterInfo[chapter].release;
+                    
+                    trailerInfo();
+    
+                    function trailerInfo(){
+                        for(let i = 0; i < trailerLinkEls.length; i++){
+                            trailerLinkEls[i].setAttribute('href',trailerLink[chapter].link[i]);
+                            trailerLinkImg[i].setAttribute('src',trailerLink[chapter].img[i]);
+                            trailerLinkText[i].innerText = trailerLink[chapter].text[i];
+                        }
+                    }
+                }
+            }
+            if(navListIndex === 0){
+                if(isResCharacter === false){
+                    popUpIndex = 0;
+                    characterName.innerText = imgPopupElLink[popUpIndex].name;
+                    characterActor.innerHTML = imgPopupElLink[popUpIndex].actor;
+                    characterInfo.innerHTML = imgPopupElLink[popUpIndex].info;
+                 
+                    for(let i = 0; i < imgPopupElLink.length; i++ ){
+                        cutWrapImg[i].setAttribute('src',imgPopupElLink[popUpIndex].cutimg[i]);
+                        characterBgImgAll[i].classList.remove('active');
+                        characterNavEls[i].classList.remove('active');
+                    }
+                    characterBgImgAll[popUpIndex].classList.add('active');
+                    characterNavEls[popUpIndex].classList.add('active');
+                }
+            }
             for (let i = 0; i < characterNavEls.length; i++) {
                 characterNavEls[i].addEventListener('click', (e) => {
                     let targetEl = e.currentTarget;

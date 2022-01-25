@@ -87,7 +87,7 @@ for(let i =0; i< jwNavLink.length; i++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
-
+        
         if(target === 0){
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
