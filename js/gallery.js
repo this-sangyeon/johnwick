@@ -148,7 +148,7 @@ posterListContainer.addEventListener('scroll',()=>{
         if(value >= 100 && value < 200){
             InductionText.classList.add('active');
         }
-        if(value >= 100 && value < 10000){
+        if(value >= 100 && value < 200){
             posterListEl[0].classList.add('active');
             posterListEl[1].classList.add('active');
             posterListEl[2].classList.add('active');
