@@ -171,6 +171,7 @@ function trailerInfo(){
 }
 
 
+
 if(matchMedia("screen and (max-width : 900px)").matches){
    
     johnwickNav.classList.add('active');
@@ -180,6 +181,8 @@ if(matchMedia("screen and (max-width : 900px)").matches){
         bugerCover.classList.toggle('active');
 
     })
+
+    
 
     for(let i = 0; i < bugerJohnwickList.length; i++){
         bugerJohnwickList[i].addEventListener('click',(e)=>{
@@ -226,10 +229,19 @@ if(matchMedia("screen and (max-width : 900px)").matches){
 }
 
 window.addEventListener('resize',()=>{
+    if(matchMedia("screen and (min-width : 1024px)").matches){
+        console.log('cdfsddfsds');
+        bgSection.style.visibility= 'visible';
+        bgSection.style.opacity= '1';
+        characterContent.style.visibility= 'visible';
+        characterContent.style.opacity= '1';
+    }
     if(matchMedia("screen and (max-width : 900px)").matches){
         console.log('cdfsddfsds');
         bgSection.style.visibility= 'visible';
         bgSection.style.opacity= '1';
         johnwickNav.classList.add('active');
+
+        
     }
 })
