@@ -14,7 +14,7 @@
     }
    
     footer{
-        bottom:5%;
+        bottom:10%;
     }
     .main-container .bg-section .trailer-area{right:-50%;  width: 50%;}
     .main-container .bg-section .trailer-area .trailer-box h3{ position: absolute; top:10%; margin: 0; left: 50%; transform: translateX(-55%);}
@@ -31,13 +31,13 @@
      }
 
     .main-area{width: 60%;}
-    .main-intro {position: absolute; top:40%;}
+    .main-intro {position: absolute; top:35%;}
     .main-text .title-img { width: 100%;}
     .main-text p{width: 100%; }
     .movie-Info{width: 100%;}
     .movie-Info ul{width: 100%;margin:0; padding: 0;}
     .movie-Info ul li{display:block;}
-    .main-content .InfoBtn{bottom:5%}
+    .main-content .InfoBtn{bottom:10%}
     .main-content .InfoBtn  a button{width: 45%; height: 90%;}
 
     /* character */
@@ -205,8 +205,8 @@
     }
     
 }
-@media screen and (max-height: 1079px){
-    .main-intro {position: absolute; top:30%;}
+@media screen and (max-height: 1080px){
+    .main-intro {position: absolute; top:0%;}
     .main-content .InfoBtn{bottom:10%; font-size: 0.7rem;}
     .still-cut{
         width: 100%;  margin-top: 10%; height: 40%; position: relative;
