@@ -1,18 +1,17 @@
-@media screen  and (max-width : 1400px) {
+
+@media screen  and (max-width : 1400px){
     header .jw-nav.active{
         display: block;
      }
-     
      header .logo > a > img {
-        width: 50px;z-index: 1500;
+        width: 50px; z-index: 1500;
     }
     header .logo{
-        height: 100%;position: absolute; margin-top: 10px;
+        height: 100%;position: absolute; margin-top: 100px;
     }
     header{
         width: 100%; top:0%; display: block;
     }
-   
     footer{
         bottom:10%;
     }

@@ -280,7 +280,5 @@ window.addEventListener('resize',()=>{
         bgSection.style.visibility= 'visible';
         bgSection.style.opacity= '1';
         johnwickNav.classList.add('active');
-
-        
     }
 })
