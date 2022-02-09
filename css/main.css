@@ -255,7 +255,7 @@ section.active {
 /* footer */
 footer{
     width: 50%; z-index: 1000; height: 5%;
-    position: fixed; bottom:10%;
+    position: fixed; bottom:2%;
 }
 footer .footer-area{
     width: 90%; height: 100%; position: absolute; left:10%;
