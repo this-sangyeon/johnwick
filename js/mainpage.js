@@ -9,7 +9,7 @@ const bugerContainer = document.querySelector('.buger-container');
 const bugerCover = document.querySelector('.buger-cover');
 let bugerJohnwickList = document.querySelectorAll('.buger-johnwick-list > ul > li');
 const johnwickHamBtn = document.querySelector('.johnwick-ham-btn');
-// let mainIntroArea = document.querySelectorAll('.main-content > .main-intro');
+
 const mainIntroArea = document.querySelector('.main-content > .main-intro');
 const mainIntroTitle = document.querySelector('.main-content > .main-intro > .main-text > h2');
 const mainIntroStory = document.querySelector('.main-content > .main-intro > .main-text > p');
@@ -36,8 +36,7 @@ let chapterInfo = [
         title:'CHAPTER1 - JOHN WICK',
         story:'I shouldn`t have touched him. Revenge against enemies who chose the wrong person!John Wick, a killer called a legend, retires from the world of crime by meeting his beloved woman and getting married. Happiness is also briefly delivered as a gift to his wife before she dies. Then one day, unidentified men rush into his house...',
         release: '<strong>Release</strong>2015, January 21',
-        img: 'img/main/jw1.jpeg'
-        
+        img: 'img/main/jw1.jpeg'ㄴ
     },
     {
         title:'CHAPTER2 - REROAD',
@@ -52,7 +51,6 @@ let chapterInfo = [
         img: 'img/main/jw3-1.jpeg'
     }
 ]
-
 let movielink = [
     'https://page.kakao.com/home?seriesId=50653596',
     'https://page.kakao.com/home?seriesId=50653662',
@@ -81,7 +79,6 @@ let trailerLink =[
         text: ['Chapter3 Main preview','Chapter3 15-second preview','Chapter3 30-second preview']
      }
 ]
-
 let introLength = chapterInfo.length;
 let currentIndex = 0;
 jwNavLink = Array.prototype.slice.call(jwNavLink);
@@ -91,18 +88,14 @@ bugerJohnwickList = Array.prototype.slice.call(bugerJohnwickList);
 // 메인 네비게이션
 for(let i =0; i< jwNavLink.length; i++){
     jwNavLink[i].addEventListener('click',()=>{
-        // e.defaultPrevented();
         for(let j = 0; j < jwNavLink.length; j++){
             jwNavLink[j].classList.remove('active');
-          
         }
         for(let i = 0; i < jwNavLink.length; i++){
             section[i].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
         section[i].classList.add('active');
-
-        // jwNavLink[0]
     })
 }
 // 트레일러
@@ -111,7 +104,6 @@ trailerBtn.addEventListener('click', ()=>{
     trailerArea.classList.add('active');
     trailerBtn.classList.add('active');
 })
-
 closeBtn.addEventListener('click', ()=>{
     console.log('click');
     trailerArea.classList.remove('active');
@@ -175,17 +167,12 @@ let isResponChapter = false;
 let isResCharacter = false;
 
 if(matchMedia("screen and (max-width : 900px)").matches){
-   
     johnwickNav.classList.add('active');
     johnwickHamBtn.addEventListener('click',()=>{
         console.log('click!');
         bugerContainer.classList.toggle('active');
         bugerCover.classList.toggle('active');
-
     })
-
-    
-
     for(let i = 0; i < bugerJohnwickList.length; i++){
         bugerJohnwickList[i].addEventListener('click',(e)=>{
             let targetIndex = e.currentTarget;
@@ -247,8 +234,6 @@ if(matchMedia("screen and (max-width : 900px)").matches){
                     let targetEl = e.currentTarget;
                     popUpIndex = characterNavEls.indexOf(targetEl);
                     console.log('popUpIndex', popUpIndex);
-                    
-
                     for (let j = 0; j < characterNavEls.length; j++) {
                         characterNavEls[j].classList.remove('active');
                         characterBgImgAll[j].classList.remove('active');
@@ -258,13 +243,10 @@ if(matchMedia("screen and (max-width : 900px)").matches){
                     characterName.innerText = imgPopupElLink[popUpIndex].name;
                     characterActor.innerHTML = imgPopupElLink[popUpIndex].actor;
                     characterInfo.innerHTML = imgPopupElLink[popUpIndex].info;
-                
                 });
             }
         })
     }
-
-    
 }
 
 window.addEventListener('resize',()=>{
@@ -276,9 +258,47 @@ window.addEventListener('resize',()=>{
         characterContent.style.opacity= '1';
     }
     if(matchMedia("screen and (max-width : 900px)").matches){
+        let isBtnClick = false;
         console.log('cdfsddfsds');
         bgSection.style.visibility= 'visible';
         bgSection.style.opacity= '1';
         johnwickNav.classList.add('active');
+
+        johnwickHamBtn.addEventListener('click',()=>{
+            if(isBtnClick === false){
+                console.log('hambuger_Open');
+                bugerContainer.classList.toggle('active');
+                bugerCover.classList.toggle('active');
+
+                for(let i = 0; i < bugerJohnwickList.length; i++){
+                    bugerJohnwickList[i].addEventListener('click',(e)=>{
+                        let targetIndex = e.currentTarget;
+                        navListIndex = bugerJohnwickList.indexOf(targetIndex);
+                        for(let i = 0; i < section.length; i++){
+                            section[i].classList.remove('active');
+                        }
+                        console.log('click');
+                        section[i].classList.add('active');
+                        setTimeout(()=>{
+                            bugerContainer.classList.toggle('active');
+                            bugerCover.classList.toggle('active');
+                        },1000)
+                        setTimeout(()=>{
+                            clipBox.classList.add('active');
+                            bgSection.classList.add('active');
+                            navWrap.classList.add('active');
+                        },100)
+                    })
+                }
+                isBtnClick = true;
+            }else{
+                console.log('hambuger_Close');
+                bugerContainer.classList.toggle('active');
+                bugerCover.classList.toggle('active');
+                isBtnClick = false;
+            }
+        })
     }
 })
+        
+ 

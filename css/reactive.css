@@ -207,11 +207,6 @@
 @media screen and (max-height: 1080px){
     .main-intro {position: absolute; top:0%;}
     .main-content .InfoBtn{bottom:10%; font-size: 0.7rem;}
-    /* .still-cut{
-        width: 100%;  margin-top: 10%; height: 40%; position: relative;
-    }
-    .still-cut .still-list ul .cutWrap{width: 40%; height: 100px; list-style: none; height: 100%; margin-right:1%; display: inline-block;} */
-
 }
 @media screen and (max-width: 1300px){
     .character-content{

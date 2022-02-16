@@ -87,7 +87,6 @@ for(let i =0; i< jwNavLink.length; i++){
             jwNavLink[j].classList.remove('active');
         }
         jwNavLink[i].classList.add('active');
-        
         if(target === 0){
             clipBox.classList.remove('active');
             bgSection.classList.remove('active');
@@ -128,7 +127,6 @@ for(let i =0; i< jwNavLink.length; i++){
             setTimeout(()=>{
                 trailerBtn.classList.remove('active');
             },700)
-            
             // 캐릭터 리스트 눌렀을 때
             for (let i = 0; i < characterNavEls.length; i++) {
                 characterNavEls[i].addEventListener('click', (e) => {
@@ -151,7 +149,6 @@ for(let i =0; i< jwNavLink.length; i++){
                         cutWrapImg[i].setAttribute('src',imgPopupElLink[popUpIndex].cutimg[i]);
                     }
                 });
-                
                 cutWrapImg[i].addEventListener('click',()=>{
                     for(let i = 0; i < imgPopupElLink.length; i++){
                         imgPopupEl[i].classList.remove('active');
@@ -159,15 +156,11 @@ for(let i =0; i< jwNavLink.length; i++){
                     imgPopupElImg[i].setAttribute('src', imgPopupElLink[popUpIndex].cutimg[i]);
                     imgPopupEl[i].classList.add('active');
                     popUpBtn.classList.add('active');
-                   
                 })
-                    popUpBtn.addEventListener('click', ()=>{
-                        imgPopupEl[i].classList.remove('active');
-                        popUpBtn.classList.remove('active');
+                popUpBtn.addEventListener('click', ()=>{
+                    imgPopupEl[i].classList.remove('active');
+                    popUpBtn.classList.remove('active');
                 })
-
-
-                
                 if(isCharacter === false){
                     popUpIndex = 0;
                     characterName.innerText = imgPopupElLink[popUpIndex].name;
@@ -182,7 +175,6 @@ for(let i =0; i< jwNavLink.length; i++){
                     characterBgImgAll[popUpIndex].classList.add('active');
                     characterNavEls[popUpIndex].classList.add('active');
                 }
-                
             }
         }
         if(target === 2){

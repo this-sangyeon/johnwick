@@ -48,5 +48,53 @@ header .jw-nav ul li > a.active{
     color:red;
 }
 .ham-navigaion{
-    display: none;
+    display: none; width: 100%; height: 100%;  position:absolute; top:0; right: 0;
+}
+.ham-btn-container{
+    width: 100%; height: 100%;  position: relative;z-index: 9999;
+}
+.johnwick-ham-btn{
+    width: 50px; height: 50px; position: absolute; right:0; z-index: 9999;
+
+}
+.johnwick-ham-btn button{
+    width: 100%; height: 100%; position: relative; outline: 0; border: 0; background: 0;
+    
+}
+.btn-line{
+    width: 50%;height: 30%; position: absolute;top:50%; left:50%; transform: translate(-50%,-50%);
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.btn-line span{
+    width: 100%; height: 2px; background: rgb(255, 255, 255);  
+  
+}
+.buger-container{
+    width: 100%; height: 0vh; position: absolute;  top:0;
+    opacity: 0;transition: 0.5s ease-in-out; visibility: hidden;
+  
+}
+.buger-container.active{
+    width: 100%; height: 100vh;  opacity: 1;transition: 0.5s ease-in-out;visibility: visible;
+}
+.buger-cover{
+    width: 100%; height: 0%;  background: linear-gradient( -45deg, #6c2adf, #4F0BC1, #2f33ff); position: relative; 
+    opacity: 0;transition: 0.5s ease-in-out;visibility: hidden;
+  
+}
+.buger-cover.active{
+    width: 100%; height: 100%;  opacity: 1;  transition: 0.5s ease-in-out;visibility: visible;
+}
+.buger-johnwick-list {
+    position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);
+}
+.buger-johnwick-list ul{
+   margin: 0; padding: 0;
+}
+.buger-johnwick-list li{
+    margin-bottom: 20%; text-align: center; list-style: none;
+}
+.buger-johnwick-list li a{
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; text-transform: uppercase;
+    text-decoration: none; color:white;text-align: center; cursor: pointer;
 }
