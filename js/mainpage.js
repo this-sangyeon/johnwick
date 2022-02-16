@@ -36,7 +36,7 @@ let chapterInfo = [
         title:'CHAPTER1 - JOHN WICK',
         story:'I shouldn`t have touched him. Revenge against enemies who chose the wrong person!John Wick, a killer called a legend, retires from the world of crime by meeting his beloved woman and getting married. Happiness is also briefly delivered as a gift to his wife before she dies. Then one day, unidentified men rush into his house...',
         release: '<strong>Release</strong>2015, January 21',
-        img: 'img/main/jw1.jpeg'ㄴ
+        img: 'img/main/jw1.jpeg'
     },
     {
         title:'CHAPTER2 - REROAD',
