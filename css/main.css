@@ -7,33 +7,15 @@ body{
     background: none;
    
 }
-.wrap{
-    width: 100%; height: 100%;position: relative;
-    margin: 0; top:0; overflow:hidden;
-}
-section {
-    width: 100%; height: 100%; position: absolute;
-    background: none; display: none;
-}
-section.active {
-    width: 100%; height: 100%; position: absolute;
-    background: none;  display: block;
-}
+.wrap{width: 100%; height: 100%;position: relative;margin: 0; top:0; overflow:hidden;}
+section {width: 100%; height: 100%; position: absolute;background: none; display: none;}
+section.active { display: block;}
 
 /* main*/
-.main-container{
-    width: 100%; height: 100%;position: relative;
-    background-color: black;
-}
-
-.main-container .bg-section{
-    width: 100%; height: 100%; position: relative;
-}
+.main-container{width: 100%; height: 100%;position: relative;background-color: black;}
+.main-container .bg-section{width: 100%; height: 100%; position: relative;}
 /* chapter-arrow */
-.main-container .bg-section .chapter-arrow{
-      position: absolute; z-index: 100;
-   display: flex; bottom:10%; right:10%; 
-}
+.main-container .bg-section .chapter-arrow{position: absolute; z-index: 100;display: flex; bottom:10%; right:10%;}
 .main-container .bg-section .chapter-arrow button{
     z-index: 100; margin-left: 10px; margin-right: 10px;
     width: 50px; height: 50px; background: none; 
@@ -46,13 +28,8 @@ section.active {
     border-bottom: solid 1px white;  border-left: solid 1px white; 
     display:block;
 }
-.main-container .bg-section .chapter-arrow .prev:first-child span{
-     transform: translate(-30%, -50%) rotate(45deg);
-
-}
-.main-container .bg-section .chapter-arrow .next:last-of-type span{
-    transform: translate(-70%, -50%) rotate(-135deg);
-}
+.main-container .bg-section .chapter-arrow .prev:first-child span{transform: translate(-30%, -50%) rotate(45deg);}
+.main-container .bg-section .chapter-arrow .next:last-of-type span{transform: translate(-70%, -50%) rotate(-135deg);}
 
 /* trailer-area */
 /* trailer-btn */
@@ -60,13 +37,8 @@ section.active {
     width: 10%; height: 10%; position: absolute; right:2%; cursor: pointer; visibility: visible;transition: ease-in-out 0.3s;opacity: 1;
     z-index: 500;  top:50%; transform: translateY(-50%); display: flex; flex-direction: row; justify-content: center; align-items: center;
 }
-.trailer-btn.active{
-   visibility: hidden; transition: ease-in-out 0.3s; opacity: 0;
-}
-.trailer-btn .trailer-name{
-    width: 100%; text-align: center; transform: rotate(-90deg);
-   
-}
+.trailer-btn.active{visibility: hidden; transition: ease-in-out 0.3s; opacity: 0;}
+.trailer-btn .trailer-name{ width: 100%; text-align: center; transform: rotate(-90deg);}
 .trailer-btn .trailer-name > p{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 1rem; color:#ffffff; 
@@ -74,20 +46,13 @@ section.active {
     width: 100%;
 }
 .trailer-btn .trailer-arrow{
-   width: 100%;height: 100%; 
-    display: flex; align-items: center;
-    animation: move 1s infinite linear;
+   width: 100%;height: 100%; display: flex; align-items: center;animation: move 1s infinite linear;
 }
-
 .trailer-btn .trailer-arrow span:first-of-type{
    width: 10px;height: 10px; ; position: absolute;
    border-left:solid 2px white;border-bottom:solid 2px white; transform: rotate(45deg);
 }
-.trailer-btn .trailer-arrow span:last-of-type{
-    width: 100%; position: absolute; height:2px; background-color: white;
-   
- }
-
+.trailer-btn .trailer-arrow span:last-of-type{width: 100%; position: absolute; height:2px; background-color: white;}
  @keyframes move {
     0% {
         transform:translateX(0px);   
@@ -105,12 +70,8 @@ section.active {
     width: 30%; height: 100%; background-color: rgba(0, 0, 0, 0.535);
     z-index: 1000; transition: ease-in-out 0.5s; 
 }
-.main-container .bg-section .trailer-area.active{
-    right:0%;transition: ease-in-out 0.5s;visibility: visible; 
-}
-.main-container .bg-section .trailer-area .trailer-close {
-    width: 100%; height: 100%; display: flex; align-items: center;
-}
+.main-container .bg-section .trailer-area.active{right:0%;transition: ease-in-out 0.5s;visibility: visible;}
+.main-container .bg-section .trailer-area .trailer-close {width: 100%; height: 100%; display: flex; align-items: center;}
 .main-container .bg-section .trailer-area .trailer-close .close-btn{
     width: 50px; height: 50px; background-color: none;
     border-radius: 50%; position:absolute; right:5%; top:2.5%; 
@@ -120,18 +81,11 @@ section.active {
    border-bottom:solid 2px rgb(255, 255, 255);
    width: 30px; position: absolute; top:50%;  transform: translateY(-50%);
 }
-.main-container .bg-section .trailer-area .trailer-close .close-btn div:first-of-type{
-   transform: rotate(-45deg);
- }
-.main-container .bg-section .trailer-area .trailer-close .close-btn div:last-of-type{
-    transform: rotate(45deg);
-}
+.main-container .bg-section .trailer-area .trailer-close .close-btn div:first-of-type{transform: rotate(-45deg);}
+.main-container .bg-section .trailer-area .trailer-close .close-btn div:last-of-type{transform: rotate(45deg);}
 .main-container .bg-section .trailer-area .trailer-box{
-    width: 100%; height: 100%; 
-    position: relative; display: flex; flex-direction: column;
-    
+    width: 100%; height: 100%; position: relative; display: flex; flex-direction: column; 
 }
-
 .main-container .bg-section .trailer-area .trailer-box h3{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 2.5rem; color:#ffffff; padding-top:0%; padding-left: 5%;
@@ -142,14 +96,9 @@ section.active {
    display: flex;flex-direction: column; align-items: center; justify-content: center; 
    visibility: hidden;opacity: 0;
 }
-.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter.active{
-    visibility: visible;opacity: 1;
- }
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter.active{visibility: visible;opacity: 1;}
 
-.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area ul{
-    width: 100%; 
-    padding: 0;box-sizing: border-box; 
-}
+.main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area ul{width: 100%; padding: 0;box-sizing: border-box;}
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area ul li{
     list-style: none; display: flex;flex-direction: column; justify-content: center;align-items: center;   
 }
@@ -164,52 +113,31 @@ section.active {
     font-weight: 500;font-size: 1rem; color:#ffffff; margin-bottom:0;
     text-decoration: none; text-transform: uppercase;margin-top: 3%; letter-spacing: 2px;
 }
-
 .main-container .bg-section .trailer-area  .trailer-box .trailer-chapter .chapter-area ul li a img{
    width: 300px;
 }
-
 .main-container .box-shadow{
     width: 60%;height: 100%; 
     background:linear-gradient(to right, rgba(0, 0, 0, 0.652) 60%, rgba(0, 0, 0, 0));
     position: absolute; z-index: 1;
 }
-.main-container  .bg-section .bg-img{
-    width: 100%; height: 100%; position: absolute; transform: scaleX(-1);
-}
-
-.main-container .bg-section .bg-img img{
-    width: 100%;height: 100%;object-fit: cover; 
-}
+.main-container  .bg-section .bg-img{width: 100%; height: 100%; position: absolute; transform: scaleX(-1);}
+.main-container .bg-section .bg-img img{width: 100%;height: 100%;object-fit: cover; }
 .main-area{
     width: 50%; height: 100%; position: absolute; z-index: 3;
     top:0; display: flex; justify-items: center; align-items: center;
 }
 .main-content{
-    width: 80%; height: 70%; position: relative; flex-direction: column;
-    top:5%; display: flex; left: 20%;
+    width: 80%; height: 70%; position: relative; flex-direction: column;top:5%; display: flex; left: 20%;
 }
 .main-intro{
-    width: 100%; position: absolute;
-    top:0; display: flex; flex-direction: column;
-    visibility: hidden;
-    transition: ease 0.5s;
-    opacity: 0;
+    width: 100%; position: absolute; top:0; display: flex; flex-direction: column; visibility: hidden;
+    transition: ease 0.5s; opacity: 0;
 }
-.main-intro.active{
-    visibility: visible;
-   transition: ease 0.5s;
-   opacity: 1;
-}
-.main-text{
-    width: 100%; height: 30%; display: flex; flex-direction: column;
-}
-.main-text .title-img{
-    width: 75%;
-}
-.main-text .title-img img{
-    width: 100%;
-}
+.main-intro.active{visibility: visible;transition: ease 0.5s;opacity: 1;}
+.main-text{width: 100%; height: 30%; display: flex; flex-direction: column;}
+.main-text .title-img{width: 75%;}
+.main-text .title-img img{ width: 100%;}
 .main-intro .main-text h2{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 300;font-size: 2rem; color:#ffffff; letter-spacing: 1px;
@@ -221,56 +149,37 @@ section.active {
     text-decoration: none; margin:0;
     width: 100%;height: 40%; 
 }
-.main-intro .main-text .movie-Info{
-    width: 100%; height: 10%; margin-top:5%;
-}
-.main-intro .main-text .movie-Info ul{
-    width: 100%;margin:0; padding: 0;
-}
+.main-intro .main-text .movie-Info{width: 100%; height: 10%; margin-top:5%;}
+.main-intro .main-text .movie-Info ul{width: 100%;margin:0; padding: 0;}
 .main-intro .main-text .movie-Info ul li{
     font-family: 'Montserrat', sans-serif; ;line-height: 1.5rem;
     font-weight: 100;font-size: 1rem; list-style: none; display: inline;margin-right:20px;
 }
-
 .main-intro .main-text .movie-Info ul li strong{
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 500;font-size: 1rem; margin-right:10px;letter-spacing: 1px;
 }
-
-.main-content .InfoBtn{
-    width: 100%; height: 7%; position: absolute;bottom:20%;z-index: 1000;
-}
+.main-content .InfoBtn{width: 100%; height: 7%; position: absolute;bottom:20%;z-index: 1000;}
 .main-content .InfoBtn  a button{
     width: 30%; height: 100%; border-radius: 20px;  position: relative;
     border:solid 1px white; background: none; margin-right: 2%;
 }
-
 .main-content .InfoBtn  a button p{
     width: 100%; padding:0; text-align: center; color:white;
     font-family: 'Montserrat', sans-serif; cursor: pointer;
     font-weight: 300;font-size: 1rem; text-transform: uppercase;
     position: absolute; top:50%;margin: 0; right:0%; transform: translate(0%, -50%);
  }
-
 /* footer */
 footer{
-    width: 50%; z-index: 1000; height: 5%;
-    position: fixed; bottom:2%;
+    width: 50%; z-index: 1000; height: 5%;position: fixed; bottom:2%;
 }
-footer .footer-area{
-    width: 90%; height: 100%; position: absolute; left:10%;
-}
- footer .footer-area ul{
-   width: 100%; margin: 0; padding: 0;
-}
+footer .footer-area{width: 90%; height: 100%; position: absolute; left:10%;}
+footer .footer-area ul{width: 100%; margin: 0; padding: 0;}
 footer .footer-area ul li{
-    float:left;
-    margin-left:5%;
-    list-style: none;
+    float:left;margin-left:5%;list-style: none;
 }
-footer .footer-area ul li > a > img{
-    width: 30px;
-}
+footer .footer-area ul li > a > img{width: 30px;}
 
   
 
