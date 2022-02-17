@@ -32,7 +32,7 @@ header .jw-nav ul li > a.active{color:red;}
 .ham-navigaion{display: none; width: 100%; height: 100%;  position:absolute; top:0; right: 0;}
 .ham-btn-container{width: 100%; height: 100%;  position: relative;z-index: 9999;}
 .johnwick-ham-btn{width: 50px; height: 50px; position: absolute; right:0; z-index: 9999;}
-.johnwick-ham-btn button{width: 100%; height: 100%; position: relative; outline: 0; border: 0; background: 0;}
+.johnwick-ham-btn button{width: 100%; height: 100%; position: relative; outline: 0; border: 0; background: 0; cursor: pointer;}
 .btn-line{
     width: 50%;height: 30%; position: absolute;top:50%; left:50%; transform: translate(-50%,-50%);
     display: flex; flex-direction: column; justify-content: space-between;
